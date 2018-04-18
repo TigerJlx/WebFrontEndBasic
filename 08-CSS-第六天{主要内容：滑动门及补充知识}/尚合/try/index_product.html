@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index_product</title>
+    <link rel="stylesheet" href="../CSS/base.css">
+    <style>
+        .logo{
+            height: 39px;
+        }
+        .nav{
+            height:55px;
+        }
+        .banner{
+            height: 500px;
+        }
+        .news{
+            height: 30px;
+        }
+        .product{
+            margin-top: 20px;
+            margin-bottom: 20px;
+            /*height: 250px;*/
+        }
+        .product .l_box{
+            height: 250px;
+            width: 320px;
+            float: left;
+            border: 1px solid #ccc;
+            background-color: #FBFBFB;
+            margin-right: 7px;
+        }
+        .product .m_box{
+            height: 250px;
+            width: 320px;
+            float: left;
+            border: 1px solid #ccc;
+            background-color: #FBFBFB;
+            margin-right: 7px;
+        }
+        .product .r_box{
+            height: 250px;
+            width: 320px;
+            float: right;
+            border: 1px solid #ccc;
+            background-color: #FBFBFB;
+        }
+        .product .arrow{
+            /*float: left;*/
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        .product .title{
+            /*float: left;*/
+            display: inline;
+            color: green;
+        }
+        .product .l_box .bottom{
+            text-align: center;
+            position: relative;
+        }
+        .product .l_box .bottom .main{
+            line-height: 220px;
+        }
+        .product .l_box .bottom .page{
+            position: absolute;
+            top: 100px;
+        }
+        .product .l_box .bottom .l_arrow{
+            left: 20px;
+        }
+        .product .l_box .bottom .r_arrow{
+            right: 20px;
+        }
+        .product .m_box .top .more{
+            float: right;
+            margin-top: 5px;
+            margin-right: 10px;
+        }
+        .product .m_box ul{
+            margin-left: 20px;
+        }
+        .product .m_box .bottom li{
+            padding: 10px 0 5px 0;
+            border-bottom: 1px dashed darkgrey;
+        }
+
+        .product .r_box ul{
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+        .product .r_box li{
+            margin-top: 5px;
+            border-left: 4px solid yellowgreen;
+            padding-left: 5px;
+
+        }
+        .product .r_box .bottom {
+            margin: 50px 0 0 10px;
+
+        }
+        .product .r_box .bottom p{
+            margin-bottom: 5px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="logo w clearfix"></div>
+<div class="nav"></div>
+<div class="banner w"></div>
+<div class="news"></div>
+<div class="product w clearfix">
+    <div class="l_box">
+        <div class="top clearfix">
+            <a href="#" class="arrow"><img src="../images/o.jpg" alt=""></a>
+            <h4 class="title">新品发布</h4>
+        </div>
+        <div class="bottom">
+            <a href="#" class="main"><img src="../images/home_hot_01.png" alt=""></a>
+            <a href="#" class="l_arrow page"><img src="../images/left.png" alt=""></a>
+            <a href="#" class="r_arrow page"><img src="../images/right.png" alt=""></a>
+        </div>
+    </div>
+    <div class="m_box">
+        <div class="top clearfix">
+            <a href="#" class="arrow"><img src="../images/o.jpg" alt=""></a>
+            <h4 class="title">新闻中心</h4>
+            <a href="#" class="more">更多</a>
+        </div>
+
+        <div class="bottom">
+            <ul>
+                <li><a href="#" style="color: red;">致歉公告1</a></li>
+                <li><a href="#">致歉公告2</a></li>
+                <li><a href="#">致歉公告3</a></li>
+                <li><a href="#">致歉公告4</a></li>
+                <li><a href="#">致歉公告5</a></li>
+                <li><a href="#">致歉公告6</a></li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="r_box">
+        <div class="top clearfix">
+            <a href="#" class="arrow"><img src="../images/o.jpg" alt=""></a>
+            <h4 class="title">技术与支持</h4>
+        </div>
+        <div class="middle">
+            <ul>
+                <li>售后服务1</li>
+                <li>售后服务2</li>
+                <li>售后服务3</li>
+                <li>售后服务4</li>
+            </ul>
+        </div>
+        <div class="bottom">
+            <p>深圳市汇聚众合科技发展有限公司 服务</p>
+            <p>热线：400-633-7922 </p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

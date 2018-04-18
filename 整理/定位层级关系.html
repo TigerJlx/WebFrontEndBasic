@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<!--
+z-index（重点）
+定位元素的特点：
+    ☞ 只有定位（除静态定位）的元素才能使用z-index
+        浮动元素和普通标准流（默认额为静态定位）都不能使用z-index
+    ☞ 通过z-index属性改变层级关系
+层级关系特点：
+    ☞ 当给一个元素设置了定位，那么该元素默认的层级z-index值是auto(看作为0)
+    ☞ 当z-index值相同的情况下，那么最后的定位元素层级要高于前面的定位元素。【后来居上原则】
+    ☞ 当z-index值不同的情况下，那么z-index值越大该元素的层级越高。
+    ☞ 如果元素的父元设置了z-index值,那么父元素的z-index值越大，那么该元素的层级越高。
+
+
+总结：只要是要实现盒子压盒子，就使用定位
+-->
+        <style type="text/css">
+             .aaa{
+                 width: 200px;
+			 	 height: 200px;
+			 	 background-color: blue
+             }
+			 .one {
+			 	width: 200px;
+			 	 height: 200px;
+			 	 background-color: pink;
+			 	 position: relative;
+			 	 top: 300px;/*改动这个值进行观察*/
+
+			 	 z-index: 11;
+			 }
+
+			 .two {
+			 	width: 200px;
+			 	 height: 200px;
+			 	  position: relative;
+			 	  z-index: 10;
+			 	  background-color: red;
+			 }
+        </style>
+    </head>
+    <body>
+
+	<div class="aaa">123</div>
+        <div class="one"></div>
+        <div class="two"></div>
+
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<!--
+☞ 继承性: 在默认情况下，如果子元素没有设置样式（注意这个前提条件），那么该子元素会受父元素的样式影响。
+注意：
+    1. CSS继承性只能发生在标签嵌套结构中
+    2. 宽度和高度不能被继承
+
+可继承的属性：
+    1.  color 可以被继承
+    2.  与font属性（设置文本 ）相关的属性都可以被继承
+    3.  行高（line-height）可以被继承
+    4.  text-align 可以被继承
+注：可以看出继承的属性基本和文本有关（font-和text-应该都是可以被继承的，记住这点就行了）
+-->
+
+    <style type="text/css">
+
+        div {
+        color: red;
+
+        font-size: 40px;
+
+        font-family: "\6977\4F53";/*楷体"*/
+
+        font-weight: 700;
+
+        background-color: pink;
+
+        text-align: center;
+
+        width: 300px;
+        }
+
+
+        /*  若子标签事先已经设置color，就不会继承父元素的color
+        p {
+            color: red;
+        }
+
+        div {
+            color: green;
+        }*/
+    </style>
+</head>
+<body>
+
+<div>
+    div文字
+    <p>
+        段落文字
+    </p>
+</div>
+</body>
+</html>

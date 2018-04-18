@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <style type="text/css">
+/*
+后代选择器
+注意：
+    1.后代选择器标签之间必须是嵌套关系。
+    2.选择器与选择器之间必须使用空格隔开
+    3.后代选择器只能选中后代元素
+
+语法：
+     选择器  选择器 {属性: 值;}
+
+ */
+        p span {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="one">
+    <span>文字1</span>
+
+    <p>
+        <span>文字2</span>
+    </p>
+</div>
+
+<p class="two">
+    没有父元素的p
+</p>
+</body>
+</html>

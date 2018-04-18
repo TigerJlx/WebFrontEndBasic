@@ -1,0 +1,314 @@
+/*
+开始完整网页的准备工作：
+1、拿到效果图，分析结构做到心中有数，分成哪几个具体的部分（logo、导航、最新公告、商品列表......）
+2、建立项目代码结构（css、js、images文件夹和html文件）
+    给文件命名时最好不要出现汉字
+    首页的网页命名为index.html，内容页再分别命名为content1.html、content2.html......
+3、开始写css样式初始化（常见块级元素初始化、常见行内元素初始化、常见行内块元素初始化和清除浮动等等），文件一般命名为base.css或global.css
+    其中块级元素的初始化不用带上div,行内元素的初始化不用带上span，这两个用于布局的标签很干净，内外边距等样式值默认都为0
+    注意其中比较特殊的行内块元素，它的vertical-align属性默认是baseline，可能会导致它的系统元素的布局对齐出现异常。所以一般初始就赋值为middle
+    一般网页都有版心，所以初始化会给一个版心样式（class=w）
+具体内容见<base.css>
+4、head标签中引入base.css，主页中再引入index.css，其它内容网页对应添加content-x.css
+5、开始写网页，将网页分成的各个部分一个一个写，写完一个再写另一个。对一个部分，先写好结构html再对应写css样式，调好后再开始下一个部分
+    在html或css代码中对每一个部分做好注释，使代码清晰简洁
+注：
+    1、代码编写过程中命名和注释是很重要的，要重视，养成好的规范习惯
+    2、一个html文件或css文件中，不同的布局分块，独立些并分块做好注释，
+    这样就把复杂的东西分成一个个简单的东西了，这样结构也清晰还不会乱，对一个复杂的大项目来说，结构分的越细越好，避免杂乱
+    3、不同内容content.html都对应建立自己的content.css。base.css为首页和其它内容页共有
+    4、样式书写过程中，类名、id名等最好直接复制粘贴以免出错
+*/
+
+
+/* logo开始 ----------------------------------------------------------------------------------------------------------*/
+/*
+1、html结构中写好logo盒子后先不急着写内容，先确定logo盒子的布局效果
+也就是先不急着写样式，先按
+.logo {
+    height: 50px;
+    background-color: red;
+}代码写确定好logo部分在页面的布局效果
+2、logo盒子准备好了以后，再在html结构中写logo盒子里面的内容，再对应写内容的样式
+（html结构中一般很少写id,一般都是写类，以便于相同结构的样式可以重复利用。
+注意在给类命名的时候尽可能地有清晰的语义，一看就知道是什么结构。
+如：left_logo和right_search明显就知道左边是logo右边是搜索框）
+注：
+    在写其它兄弟部分的时候也要按这样的思路去写
+    细节很重要，一定要养成好习惯，当所有基础知识点都掌握好了话，细节决定成败！
+
+*/
+/**/
+.logo {
+    /*height: 50px;  这里不需要预先设置logo的高度，因为它的内容有设置浮动，通过清除浮动就可以利用内容自己撑开，可以将这部分拿出来自己做实验
+                     当父元素中子元素有设置浮动的而且父元素后面跟着标准流，那么父元素就要清除浮动，使用清除浮动的话，就可以保证子元素还在父元素内的占位效果*/
+	padding-top: 10px;
+}
+.left_logo {
+	 float: left;/*为了将logo和搜索框分别放在左边和最后边，分别设置左浮动和右浮动
+	                但是这里要注意一件事：这个块级元素div设置浮动后就变成行内块元素了，
+	                今后就不能以为还具备块级元素的特点了
+	                所以left_logo和right_search两个没有宽度，宽度由内容撑开
+	                注意：
+	                1、今后一定要注意碰到块级元素标准流先判断他是不还是标准流
+	                2、当没有设置浮动或定位时，块级元素也想达到由子元素撑开这种效果，使用模式转换就好了
+	                */
+}
+/*
+也可以写
+.logo .left_logo{
+    float: left;
+}
+这样写也没错。left_logo部分只会出现在logo部分，所以不用给它再限定条件是在logo部分中，所以就是多余
+
+但是注意到下面
+.left_logo  a {
+	 ......
+}
+就不能写成
+a {
+	 ......
+}
+了，因为a除了在left_logo部分还可能出现在别的部分，自然必须得加上限定条件了，确实是在哪里面
+这里还限定的话，还可以写成.logo .left_logo a {
+	 ......
+}
+这样就会万无一失。但是会显得累赘，原因在前面已经分析过了
+
+所以今后在写选择器的时候，脑子里必须得绷着这根弦，确认只是选中自己要选中的，不会误选别人的部分
+*/
+.left_logo  a {
+     display: block;/*为了设置a标签为背景图片大小的宽高度，将行内元素进行模式转换成块级元素*/
+	 width: 179px;/*转换成块级元素后，设置宽度*/
+	 height: 39px;/*转换成块级元素后，设置高度*/
+	 background: url(../images/logo.jpg) no-repeat;/*已经设置a标签为背景图片大小的宽高度了，刚好就显示这张图片，不需要再平铺*/
+	 text-indent: -1000px;/*移除文字不显示的方式*/
+}
+
+.right_search {/*里面的input初始化已经清除了边框和轮廓线，所以这里设置这个搜索盒子的边框就行了
+                  因为没必要输入框设置一次边框，按钮也设置一次边框*/
+	 float: right;/*设置右浮动*/
+	 border: 1px solid #D2D2D2;
+	 border-radius: 6px; /* 圆角 */
+}
+
+.right_search .btn {
+    width: 33px;
+    height: 32px;
+    float: left;/*这里虽然设置浮动会成为行内块元素，而且它本身就是行内块元素，没设置value内容撑开它，所以设置宽高度
+	               就是说你有由内容自己撑开的特性，但是我也不是非得用你这个特性，要根据实际情况而定
+	               这里的宽高度是按着背景图片来的*/
+    background: url(../images/search2.jpg) no-repeat;
+}
+
+.right_search .search {
+     /*行内块元素是可以设置宽高度的*/
+     /*width: 159px;*/
+     /*height: 32px;*/
+     line-height: 32px;
+	 background-color: #F5F5F5;/*背景颜色*/
+	 color: #ACACAC;/*文字颜色*/
+	 padding-left: 5px;/*文字内容往右挪点*/
+	 float: left;/*这里虽然设置浮动会成为行内块元素，而且它本身就是行内块元素，有内容撑开它,所以不必要设置宽高度*/
+} 
+
+/*注意：input标签本身就是行内块元素，会在一行上显示，
+这里使用浮动是为了消除两个input标签间的距离（行内块元素代码编写受换行和空格影响）
+
+总结行内块元素的特点：
+1、verticla-align 默认为baseline
+2、行内块元素代码编写受换行和空格影响
+3、可以设置宽高度（不设置宽度时由内容撑开）
+4、在一行上显示
+
+思考：什么时候用背景图片，什么时候用插入图片？
+*/
+
+
+
+/* 导航开始 ----------------------------------------------------------------------------------------------------------*/
+.nav {
+	 height: 55px;
+	 border-top: 1px solid #ccc;/*上边框*/
+	 background: url(../images/nav_bg.png);
+}
+/*不用给ul起类名，因为不需要对ul操作，直接选中li就行了*/
+.nav li {
+	 float: left;
+	 line-height: 55px;
+	 background: url(../images/nav_bg-line.png) no-repeat right;
+}
+.nav li a {
+	 padding: 0 35px;
+}
+
+
+/* 最新公告开始 ------------------------------------------------------------------------------------------------------*/
+.news {
+	 height: 29px;
+	 line-height: 29px;/*行高会继承，和文字有关的都可以继承*/
+	 border-top: 1px solid #ccc;
+	 border-bottom: 1px solid #ccc;
+	 background-color: #FBFBFB;
+}
+
+.left_news {
+	 float: left;
+}
+
+.right_news {
+	 float: right;
+}
+
+
+/* 商品列表 ----------------------------------------------------------------------------------------------------------*/
+.product{
+	 margin-top: 15px;
+
+}
+
+.product .title  {
+	 padding-top: 13px;
+	 padding-left: 6px;
+}
+
+.product .title i {
+	 width: 14px;
+	 height: 14px;
+	 display: block;
+	 background: url(../images/o.jpg) no-repeat;
+	 float: left;
+	 margin-right: 5px;
+}
+
+.product .title h4 {
+	 float: left;
+	 color: green;
+}
+
+.l_box {
+	 float: left;
+	 width: 310px;
+	 height: 224px;
+	 border: 1px solid #ccc;
+}
+
+
+.l_box .content  {
+	 padding-top: 20px;
+	 text-align: center;
+
+	 position: relative;
+}
+
+.l_box .content a  {
+	 position: absolute;
+	 top: 80px;
+}
+
+.l_box .content .lpage {
+	  left: 30px;
+}
+
+.l_box .content .rpage {
+	 right: 30px;
+}
+
+
+
+/* 中间盒子 ----------------------------------------------------------------------------------------------------------*/
+.m_box {
+	 float: left;
+	 height: 224px;
+	 width: 375px;
+	 border: 1px solid #ccc;
+	 margin-left: 10px;
+}
+.m_box .content  {
+	padding: 5px  22px 0 22px;
+}
+
+.m_box .content li {
+	  height: 26px;
+	  line-height: 26px;
+	  border-bottom: 1px dashed #DCDCDC;
+}
+
+.m_box .title a {
+	 float: right;
+	 margin-right: 20px;
+}
+
+
+
+.r_box {
+	float: right;
+	height: 224px;
+	width: 270px;
+	border: 1px solid #ccc;
+}
+
+.r_box .content {
+	 padding-left: 22px;
+	 padding-top: 15px;
+}
+
+.r_box .content  li {
+	 border-left: 4px solid yellowgreen;
+	 margin-top: 8px;
+	 padding-left: 5px;
+}
+
+.r_box .content p {
+	 margin-top: 40px;
+	 line-height: 20px;
+}
+
+
+
+/* 结尾部分开始 ------------------------------------------------------------------------------------------------------*/
+.top_footer {
+	 margin-top: 20px;
+	 height: 221px;
+	 background-color: #2D2D2D;
+	 border-bottom: 1px dashed #414141;
+}
+.top_footer .w {
+	 position: relative;
+}
+
+.top_footer  dl {
+	 float: left;
+	 margin-top: 10px;
+	 width: 108px;
+}
+
+.top_footer  dt {
+	  color: #C7C7C7;
+	  height: 33px;
+}
+
+.top_footer  dd {
+	  height: 20px;
+}
+
+.top_footer a {
+	position: absolute;
+	top: 0;
+	right: 0;
+
+}
+
+ 
+.bot_footer {
+	 height: 150px;
+	 background-color: #2D2D2D;
+	 text-align: center;
+	 overflow: hidden;
+
+}
+
+.bot_footer .p1 {
+	 margin-top: 20px;
+	 margin-bottom: 25px;
+}

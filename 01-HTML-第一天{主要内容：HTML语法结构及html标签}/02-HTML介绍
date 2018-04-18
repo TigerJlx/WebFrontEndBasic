@@ -1,0 +1,17 @@
+HTML（Hyper Text Markup Language）超文本标记语言
+超文本:就是指页面内可以包含图片、链接，甚至音乐、程序等非文字元素
+标记:语言的基础是各个标签【在网页中做记号】
+如：<head>和<body>，其中<head>部分提供关于网页的信息，<body>部分提供网页的具体内容
+
+☞ 结构
+<!Doctype  html>  指定文档类型
+<html>  根标签
+      <head>
+           <title>网页标题</title>
+        </head>
+        <body>
+              在浏览器中看到的所有网页信息都要放到body标签中
+       </body>
+</html>
+
+

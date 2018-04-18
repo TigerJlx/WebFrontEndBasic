@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <style type="text/css">
+
+        input {
+            border: 0 none;
+            outline-style: none;
+        }
+
+        .username {
+            border: 1px dotted #ccc;
+            background-color: red;
+        }
+
+        .username:focus {
+
+            background-color: pink;
+
+        }
+
+        .em {
+            border-bottom: 1px dashed pink;
+        }
+
+        .search {
+            border: 1px solid #000;
+            background: url(search.png) no-repeat right;
+        }
+    </style>
+</head>
+<body>
+
+<!--单纯的label和普通文字显示没有任何区别，可以通过设置label标签的for属性为input标签的id值与input标签进行关联-->
+
+<label for="um"> 用户名:</label>
+<input type="text" class="username" id="um">
+
+<br>
+<br>
+
+<label for="ema">邮箱：</label>
+<input type="text" class="em" id="ema">
+
+
+<br>
+<br>
+
+搜索: <input type="text" class="search">
+</body>
+</html>

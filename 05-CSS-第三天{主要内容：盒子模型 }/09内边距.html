@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+内边距： 内容与边框之间的距离
+设置上下左右内边距，其实就是向边框里面填东西，因为盒子内容大小（就是初始给设置盒子的宽高度）不被改变，所以整个盒子会变大
+不仅设置padding会让盒子整体变大，设置border厚度和margin大小也一样会使盒子变大
+所以你要注意到的是：一个整体盒子的大小（以宽度为例）= border-left + padding-left + content-width + padding-right + border-right
+所以无论你改变其中哪一个值的大小，都会改变一个盒子的大小，这就是盒子模型
+不要想装手机的盒子，不一样！！！
+特别注意：盒子大小不包括margin部分
+
+
+注意：
+     padding值只能移动盒子中的内容,不能移动盒子。
+属性联写：
+    padding: 10px；    上，右，下，左四个方向10px
+    padding: 10px  20px;   上下10px  左右20px
+    padding:10px 20px 30px;  上10px  左右20px  下30px
+
+    padding:10px 20px 30px 40px;  上10  右 20  下 30 左 40
+总结：
+通过比较font、background、boder和padding的属性联写发现：各有各的特点
+-->
+    <head>
+        <meta charset="utf-8">
+		<style type="text/css">
+
+			  .box {
+			  	 width: 300px;
+			  	 height: 300px;
+                  /*这里设置的宽高度指的是盒子content大小就是300 x 300*/
+			  	 border: 1px solid red;
+
+			  	/*padding-left: 50px;
+			  	 padding-top: 50px;
+                padding-right: 50px;
+			  	 padding-bottom: 50px; */
+                  /*content不会变，填充padding，就会让盒子变大*/
+			  	 margin: 50px 50px 50px 50px;
+
+			  }
+		</style>
+    </head>
+    <body>
+
+    	 <div class="box">
+    	 	
+    	 	 
+    	 	 <img src="2.png" alt="">
+    	 
+    	 </div>
+    </body>
+</html>

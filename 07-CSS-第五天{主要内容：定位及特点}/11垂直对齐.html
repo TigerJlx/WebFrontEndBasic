@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<!--
+vertical-align 属性介绍
+☞ text-align      水平对齐
+☞ vertical-align   垂直对齐
+
+☞ 默认行内块元素（img,input）,有默认的vertical-align属性值。table标签也可以设置。
+vertical-align: baseline;  默认值（把元素放置在父元素的基线上）
+                top      顶部对齐（把元素的顶端与行中最高元素的顶端对齐）
+                middle   中部对齐（把元素放置在父元素的中部）
+                bottom   底部对齐（把元素的底端与行中最低的元素的顶端对齐）
+注：直接看这些参数对齐的效果看不出来，可以在图片所在的父元素中添加文字作为参照物
+
+
+行内块元素很特殊，他会和它的兄弟元素在垂直方向有些对不齐，此时就要改变vertical-align的默认值就好了
+所以尽量不要通过display:inline-block的方式将元素转换成行内块元素，这种类型的元素都不被承认是标准流（flow，只分成inline和block）的一种
+如果进行这样的转换可能会带来不必要的麻烦
+
+行内块元素还有个特殊的地方，两个行内块元素之间会受代码空格或换行的影响，渲染时会产生距离，需要通过设置浮动来解决
+-->
+        <style type="text/css">
+        		* {
+        			 margin: 0;
+        			 padding: 0;
+        		}
+
+				/* .box {
+					 width: 300px;
+					 height: 400px;
+					 border: 1px solid red;
+				}
+ */
+				img {
+					 vertical-align: baseline;
+				}
+
+			 .one {
+			 	 border: 1px solid red;
+			 }
+
+			 input{
+
+			 		width: 300px;
+			 		height: 300px;
+			 		vertical-align: top;
+			 		float: left;/*行内块元素会受空格和换行影响产生多余的距离，可以通过浮动来解决*/
+			 }
+        </style>
+    </head>
+    <body>
+
+
+    	 <div class="one">
+    	 	 <img src="2.png" >
+    	 </div>
+
+
+    	 <input type="text">
+
+    	 <input type="button">
+
+    	<!--  <div class="box">
+
+    	 	 <span>文字</span>
+
+    	 	 <img src="2.png">
+    	 </div> -->
+    </body>
+</html>

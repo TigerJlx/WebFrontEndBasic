@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!--
+    继承性中特殊标签：
+        1： a标签不能直接受父元素中的文字颜色影响
+            a标签事先有颜色，所以不会继承。其实是继承了，但是被默认颜色配置层叠覆盖了
+            要想设置a标签颜色，那就设置一个颜色将默认颜色给覆盖掉
+        2： 标题标签不能直接受父元素中的文字大小影响
+            道理一样，标题标签有自己的默认文字属性配置，会覆盖掉继承过来的配置
+    -->
+    <style type="text/css">
+
+        .box {
+            color: red;
+            font-size: 30px;
+        }
+
+        h1 {
+            font-size: 30px;
+            font-weight: 400;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="box">
+
+    <p>文字1</p>
+
+    <span>文字2</span>
+
+    <a href="#">文字3</a>
+
+    <h1>标题</h1><!--默认font-size：2em-->
+
+</div>
+
+
+<h2>123</h2><!--默认font-size：1.5em-->
+<h3>123</h3><!--默认font-size：1.17em-->
+<h4>123</h4><!--默认font-size：1em-->
+<h5>123</h5><!--默认font-size：0.83em-->
+<h6>123</h6><!--默认font-size：0.67em-->
+<!--em为一个文字大小，文字大小为默认大小-->
+</body>
+</html>

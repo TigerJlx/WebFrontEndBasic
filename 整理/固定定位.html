@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+可以这样理解：浮动或者绝对定位虽然是飘起来了，但是地上有根绳子在拉着；而固定定位是完全浮起来的不受地面的束缚
+☞固定定位的元素脱标不占位置
+☞固定定位的元素可以实现模式转换（脱标的元素都有这个特点）
+
+☞固定定位的元素始终是以body(浏览器)可视区域为参照设置定位。父元素为非静态定位也不管用
+-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            margin: 100px;
+        }
+
+        .one {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="one"></div>
+</div>
+<div style="height:1000px"></div>
+</body>
+</html>

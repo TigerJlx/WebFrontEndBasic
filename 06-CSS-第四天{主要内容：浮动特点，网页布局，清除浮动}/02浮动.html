@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<!--
+
+补充：浮动和定位的不同在于所有浮动元素都在一个z-index上，而定位的每个元素的z-index都不一样
+
+标准流（normal flow）
+	 标准流：
+          在页面中标签（元素）默认的显示方式就是标准流的显示方式。
+浮动
+    用法：
+        float: left |  right;
+    特点：
+        ◇ 浮动的元素不占位置（脱标）
+        ◇ 浮动可以让块级元素在一行上显示（所有浮动元素都在一个z-index上）
+        ◇ 可以进行元素的模式转换 （行内块）
+分析：
+标准流是正常的显示，float是漂浮起来，二者在页面的不同层
+比如说：正常放置两个div标签，第一个渲染出来后占body左上角位置， 根据标准流的特点，第二个会紧邻第一个的底端进行渲染；
+        浮动后放置两个div标签，第一个渲染出来后占body左上角位置，根据浮动的特点，第二个会紧邻第一个的右端进行渲染（以float=left为例）；
+标准流元素和浮动元素在前后方向上是两个不同的层，所以以"俯视"角度看，两种标签是可以完全重合的
+
+正常的块级元素、行内元素和行内块元素是标准流那一层
+浮动起来后相当于就没有块级元素、行内元素和行内块元素这三种的分类了，只有之前行内块元素的特点（也就是可以设置宽高度以及水平显示）
+比如说：span标签是行内元素，浮动起来到上一层后设置的宽高度就可以生效了
+        div标签是块级元素，浮动起来到上一层后就不会默认弹性继承父元素的宽度，整个元素的宽高度有内容撑起来
+也就是说都变成了行内块元素了（可以这样理解，实际是因为浮动到上一层所出现的效果）
+
+总结：前面说的浮动三个特点不要死记，要理解（后面说的一大堆才是对浮动和标准流的真正理解）
+-->
+        <style type="text/css">
+
+
+
+/* 
+			 div {
+			 	 width: 100px;
+			 	 height: 100px;
+			 
+			 } */
+
+			 .one {
+			 	  background-color: red;
+			 	  float: left;
+			 }
+			 .two {
+			 	 background-color: green;
+			 	 float: right;
+			 	 margin-left: 30px;
+			 }
+			 .three {
+			 	 background-color: pink;
+			 	 width: 120px;
+			 	 float: right;
+			 }
+
+			 span {
+			 	 width: 300px;
+			 	 height: 300px;
+			 	 float: left;
+			 	 background-color: red;
+
+                 text-align: center;
+                 line-height: 300px;
+			 }
+
+			 div {
+			 	 background-color: red;
+			     text-align: center;
+			     float: left;
+
+			 }
+        </style>
+    </head>
+    <body>
+
+    	 <div>文字</div>
+
+    	  <span>123</span>
+
+    	<!--  <div class="one"></div>
+    	 <div class="two"></div>
+    	 <div class="three"></div> -->
+    </body>
+</html>

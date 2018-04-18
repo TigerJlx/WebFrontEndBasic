@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+<!--
+盒子模型（重点）
+可以放内容的标签都可以称为盒子
+☞ 作用：
+    实现网页布局（在网页画盒子）
+☞ 组成：
+     ◇ 边框    border
+     ◇ 内边距  padding
+           盒子中的内容与盒子边框的距离
+     ◇ 外边距  margin
+            盒子与盒子之间的距离
+
+边框 (border)
+☞ border-width:  边框宽度
+☞ border-style:  none  ;  默认没有边框
+                  solid    实线
+                  dotted   点线
+                  dashed   虚线
+☞ border-color   边框颜色
+
+☞border属性联写中：
+     ◇ 必须设置border-style
+     ◇ 没有顺序的限制!!!
+◇ 去掉边框：
+    border: 0 none;//不加0也可以，只是考虑到兼容性
+◇ 去掉轮廓线：
+    outline-style: none;
+◇ 边框合并
+    border-collapse: collapse;
+    注意该属性只适用于表格。
+注意：属性的取值都可以查询手册，注意其默认值
+-->
+        <meta charset="utf-8">
+        <style type="text/css">
+
+			 .box {
+			 	 width: 300px;
+			 	 height: 300px;
+				 /* 设置边框颜色-------------------- */
+			 	 /* border-color: red; */
+				
+				 /* 设置边框宽度-------------------- */
+			 	 /* border-width: 5px; */
+
+				 /* 设置边框样式-------------------- */
+			 	 /* border-style: solid; */
+
+				/* 点线 */
+			 	 /* border-style: dotted; */
+					
+				 /* 虚线 */
+			 	 /* border-style: dashed; */
+
+
+				 /* border属性联写------------------ */
+			 	 /* border:solid red 2px; */
+			 	 /*border: 1px solid red;*/
+
+                 /*上面是四条边框一起设置，上下左右四条边框还可以单独设置*/
+			 	  border-top: 5px solid pink;
+                  /*border-top-color: red;*/
+			 }
+
+			 input {
+
+                /*border: 1px solid red;*/
+                /*line-height: 50px;*/
+                /* 去掉边框 */
+                border:0 none;
+                /* 去掉轮廓线 */
+                /* outline-style: none; */
+			 }
+        </style>
+    </head>
+    <body>
+
+    	  <div class="box"></div>
+
+			 <input type="text" value="132123">
+		
+    	  
+    </body>
+</html>

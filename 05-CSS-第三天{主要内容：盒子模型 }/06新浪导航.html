@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <style type="text/css">
+
+			.nav {
+				 height: 50px;
+				 border-top: 2px solid red;
+				 border-bottom: 1px solid pink;
+				 background-color: #ddd;
+			}
+
+			.nav a {
+                text-decoration: none;/*去掉a标签的下划线*/
+                display: inline-block;/*a标签是行内元素，必须编程行内块元素才能设置宽高度*/
+                height: 50px;/*宽度和父元素一样即可，只需设置高度*/
+                line-height: 50px;/*也可以将行高放在父标签中，通过继承间接给子标签设置行高*/
+                /*
+                行高只能实现文字在标签中垂直居中显示
+                那子标签的内容怎么在父标签中垂直居中显示呢？
+                1、将子标签的高度设置为父标签高度
+                2、将子标签行高设置为子标签高度
+                */
+			}
+
+			.nav a:hover {
+				 background-color: #ccc;
+				 color: red;
+			}
+        </style>
+    </head>
+    <body>
+
+    	 <div class="nav">
+    	 	
+    	 	  <a href="#">首页</a>
+    	 	  <a href="#">设置为首页</a>
+    	 </div>
+    </body>
+</html>

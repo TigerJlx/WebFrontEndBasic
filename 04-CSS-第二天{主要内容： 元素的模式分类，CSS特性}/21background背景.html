@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<!--
+背景
+☞ background-color     设置背景颜色
+    默认值： transparent  透明色
+    rgb(0,0,0,0.x)可以设置透明程度
+
+☞ background-image    设置背景图片
+☞ background-repeat    背景平铺方式
+    repeat 默认值
+    no-repeat  不平铺
+    repeat-x   横向平铺
+    repeat-y   纵向平铺
+☞ background-position  设置背景图片位置
+注意：
+    1.当背景图片位置设置一个值的时候，第二个默认值是center.
+    2.当设置背景图片位置出现具体数字，第一个值代表水平方向，第二个字代表垂直方向。
+//background-position具体用《../08-CSS-第六天{主要内容：滑动门及补充知识}/06微信导航.html》
+
+属性联写(与font不一样)
+    1： 该属性联写中没有个数的限制
+    2： 该属性中没有顺序的限制
+
+-->
+
+        <style type="text/css">
+
+			 .box {
+			 	 
+			 	 width: 300px;
+			 	 height: 300px;
+			 	 /* background-color:  red; */
+
+			 	 /* 设置背景图片 */
+			 	 /* background-image: url(2.png); */
+					
+			     /* 背景不平铺 */
+			 	 /* background-repeat: no-repeat; */
+
+				 /* 设置背景图片位置 */
+			 	 /* background-position:bottom left; */
+
+			 	  /*  background-position: center; */
+
+
+			 	  /* background-position: 20px center; */
+
+			 	  /* background-position: right 50px; */
+
+
+			 	   /*background:20px 100px url(2.png) red no-repeat; */
+
+			 	  background-image: url(2.png);/*错误*/
+
+			 	  background: url(2.png) no-repeat;
+			 }
+        </style>
+    </head>
+    <body>
+
+    	 <div class="box">
+    	 	
+    	 	asdfadf
+
+    	 	<!-- <img src="2.png" height="101" width="85" alt=""> -->
+    	 </div>
+    </body>
+</html>

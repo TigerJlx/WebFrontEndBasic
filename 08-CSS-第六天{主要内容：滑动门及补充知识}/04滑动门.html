@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<!--
+所谓的滑动门和之前可以根据内容长度自动撑开的导航没什么区别
+只不过是加了背景图片进来玩而已
+没必要说的那么高大上，还搞个玄乎的名字——滑动门
+-->
+        <style type="text/css">
+			
+			 div {
+			 	 float: left;
+			 }
+
+			 .left {
+			 	 width: 10px;
+			 	 height: 100px;
+			 	 background: url(l.png) no-repeat;
+			 }
+
+			 .middle {
+			 	 height: 100px;
+			 	 line-height: 100px;
+			 	 background: url(m.png);
+			 }
+			 .right {
+			 	 width: 10px;
+			 	 height: 100px;
+			 	 background: url(r.png) no-repeat;
+			 }
+			
+        </style>
+    </head>
+    <body>
+
+    	  <div class="left"></div>
+    	  <div class="middle">文字</div>
+    	  <div class="right"></div>
+    </body>
+</html>

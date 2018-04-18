@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+
+<!--
+作用：
+     收集用户信息（一般用于用户注册等）
+组成：
+     ☞ 提示信息
+     ☞ 表单控件 （重点）
+     ☞ 表单域（表单域中放置提示信息和表单控件）
+表单域
+   <form></form>
+    ☞ action : 设置后台处理数据的后台程序
+    ☞ method：提交数据给后台程序的方式
+         get提交数据： 会将数据显示在地址栏中
+            现象：
+                url: ....../1.php?username=jlx&pwd=123
+         post提交数据： 会通过后台提交数据（安全性）
+            现象：
+                表单数据
+                username:	jlx
+                pwd:	    123
+    默认是get方式
+-->
+<form action="1.php" method="post">
+
+    用户名: <input type="text" name="username">
+
+    <br>
+    <br>
+
+    密码: <input type="password" name="pwd">
+    <br>
+    <br>
+
+    <input type="submit">
+</form>
+</body>
+</html>

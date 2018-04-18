@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index_logo</title>
+    <link rel="stylesheet" href="../CSS/base.css">
+    <style>
+        .logo {
+            margin-top: 10px;
+        }
+        .left_logo{
+            float: left;
+            text-indent: -1000px;
+        }
+        .left_logo a{
+            display: block;
+            width: 179px;
+            height: 39px;
+            background: url("../images/logo.jpg") no-repeat;
+        }
+        .right_search{
+            float: right;
+            border: 1px solid #D2D2D2;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            border-radius: 6px;
+        }
+        /*input输入框元素是有默认宽度的，和div不一样，div只是一个容易，而input是一个组件*/
+        .right_search .search{
+            line-height: 32px;
+            background-color: #F5F5F5;/*背景颜色*/
+            color: #ACACAC;/*文字颜色*/
+            float: left;
+            padding-left: 5px;
+        }
+        .right_search .btn{
+            width: 33px;
+            height: 32px;
+            background: url("../images/search2.jpg") no-repeat right;
+            float: left;
+        }
+
+        .nav{
+            background-color:red;
+            height:50px;
+        }
+    </style>
+</head>
+<body>
+<div class="logo w clearfix">
+    <div class="left_logo">
+        <a href="#">尚合</a>
+    </div>
+    <div class="right_search">
+        <input type="text" class="search" value="请输入搜索内容">
+        <input type="button" class="btn">
+    </div>
+</div>
+<div class="nav"></div>
+</body>
+</html>

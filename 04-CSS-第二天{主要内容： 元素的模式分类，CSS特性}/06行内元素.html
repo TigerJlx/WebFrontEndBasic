@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+代表：
+span， a	, font, strong, i,s....
+特点：
+    ☞ 行内元素在一行上显示
+    ☞ 行内元素默认宽度和高度由内容撑开，所以由内容决定
+    ☞ 行内元素不能设置宽度和高度
+
+回想块级元素的text-align属性：
+块级元素才有默认宽度，行内元素的默认宽度由内容决定，text-align就是设置内容在宽度上的布局显示，只能是块级元素才具备
+
+
+-->
+    <head>
+        <meta charset="utf-8">
+
+        <style type="text/css">
+			 
+			 .one {
+			 	  background-color: pink;
+			 }
+
+			 .two {
+			 	 background-color: red;
+			 }
+
+			 span,a {
+			 	 background-color: blue;
+			 	 width: 300px;
+			 	 height: 300px;
+			 }
+        </style>
+    </head>
+    <body>
+
+    	<div class="one">块</div>
+    	<div class="two">快</div>
+
+    	<span>行内</span>
+    	<a href="#">行内</a>
+    </body>
+</html>

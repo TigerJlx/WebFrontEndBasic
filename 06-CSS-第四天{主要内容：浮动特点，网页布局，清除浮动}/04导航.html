@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        /*
+        当设置容器div为浮动时，仅仅是对于这个div标签
+        容器内的元素还是标准流，是块级元素就是块级元素，是行内元素就是行内元素.......
+        */
+        .nav {
+            height: 50px;
+            line-height: 50px;
+            background-color: pink;
+            /*float: left;*/
+            /*margin-left: 280px;*/
+
+        }
+
+        li {
+            float: left;
+
+        }
+
+        li a {
+            padding: 0 10px;
+            height: 50px;
+            display: block;
+        }
+
+        li a:hover {
+            background-color: #ccc;
+        }
+
+        .w {
+            width: 600px;
+            margin: 0 auto;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="nav">
+
+    <div class="w">
+
+        <ul>
+            <li><a href="#">百度一下</a></li>
+            <li><a href="#">百度</a></li>
+            <li><a href="#">百度百科呵呵</a></li>
+            <li><a href="#">前端与移动开发全栈学院</a></li>
+        </ul>
+    </div>
+
+
+</div>
+
+</body>
+</html>

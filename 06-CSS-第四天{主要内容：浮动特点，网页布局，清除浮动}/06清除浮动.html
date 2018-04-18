@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!--
+    需要清除浮动的背景：父元素不设置高度，子元素占位时由子元素弹性撑开，设置浮动再设置清除浮动保持未浮动时的撑开效果
+    //清除浮动后，浮动前的标准流占多少（弹性撑开父元素），浮动再清除浮动的子元素照样占多少
+    或者说：
+        ☞ 父容器不设置高度（height:0;也不行）
+        ☞ 父容器中所有的子元素都设置了浮动（注意是"所有"）
+
+    当父元素没有设置高度（默认为0），没设置为浮动的时候高度由子元素撑开，子元素设置为浮动飘起来后父元素在标准流层上没有东西撑开，高度又变成0了
+    父元素是标准流，子元素是浮动，两个根本就不在同一层
+
+    浮动是对该浮动元素后面紧跟着元素有影响
+
+    清除浮动不是清除浮动的这性质，本质其实就是"假装父元素内浮动的元素都是标准流"，
+    这样子元素的浮动效果不变，但父元素是被标准流填充了的，而不是空的高度
+
+    清除浮动：
+    ◇ 方式一：使用clear: left | right | both|
+        弊端：页面出现没有意义的空的div
+    ◇ 方式二：给父元素设置overflow:hidden;
+        弊端：当出现子元素显示在父元素外面时，会将超出父元素的部分进行隐藏。（纵向不会超出，但横向可能会超出啊）
+    ◇ 方式三：使用伪元素清除浮动（推荐）
+    .clearfix:after {
+            content: ""; /*要求必须有content属性，用来设置该伪元素标签的内容*/
+            display: block;/*伪元素是行内元素，要想设置宽高度需要进行模式转换，
+                             那为什么不设置inline-block，因为其实标准上只有block和inline，所以一般不设置inline-block*/
+            height: 0;
+            line-height: 0;
+            visibility: hidden;/*用于清除浮动作用，所以这个伪元素标签没有必要显示*/
+            /*前面的一大堆不就是实现"<div class="clear"></div>"嘛*/
+
+            clear: both;/*关键不就是这句*/
+        }
+    .clearfix {
+        /* 兼容IE */
+        zoom: 1;
+    }
+    注意：
+    其实本质就是发挥方式一的效果，让父元素含有那个"<div style="clear: both"></div>"而已
+    这就是".clearfix:after"称为伪元素的原因：
+    ".clearfix:after" 表示在有这个clearfix类的元素的最后子元素后面伪装有一个"<div style="clear: both"></div>"
+    ".clearfix:before"表示在有这个clearfix类的元素的最前子元素前面伪装有一个"<div style="clear: both"></div>"
+    -->
+    <style type="text/css">
+
+        .box {
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        .nav {
+
+            height: 50px;
+            margin: 0 auto;
+            background-color: blue;
+        }
+
+        .content {
+            background-color: pink;
+            /* 清除浮动 */
+            /* overflow: hidden; */
+        }
+
+        .left {
+            float: left;
+            width: 100px;
+            height: 400px;
+            background-color: yellowgreen;
+        }
+
+        .middle {
+            width: 400px;
+            height: 400px;
+            background-color: red;
+            float: left;
+        }
+
+        .right {
+            width: 100px;
+            height: 400px;
+            background-color: yellowgreen;
+            float: right;
+        }
+
+        .footer {
+            height: 100px;
+            width: 700px;
+            background: #000;
+        }
+
+        /* 清除浮动 */
+        .clear {
+
+            clear: both;
+        }
+
+        /* 使用伪元素清除浮动 */
+
+        .clearfix:before, .clearfix:after {
+            content: ""; /*要求必须有content属性，用来设置该伪元素标签的内容，
+                             那为什么不设置inline-block，因为其实标准上只有block和inline，所以一般不设置inline-block*/
+            display: block;
+            /*height: 0;*/
+            /*line-height: 0;*/
+            /*visibility: hidden;*/
+            /*前面的一大堆不就是实现<div style="clear: both"></div>嘛*/
+
+            clear: both;/*关键不就是这句*/
+        }
+
+        .clearfix {
+            /* 兼容IE */
+            zoom: 1;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <div class="nav"></div>
+
+    <div class="content ">
+        <div class="left"></div>
+        <div class="middle"></div>
+        <div class="right"></div>
+
+        <!--<div class="clear"></div>-->
+        <div style="clear: both"></div><!--清除兄弟元素的浮动-->
+
+    </div>
+
+    <div class="footer"></div>
+</div>
+</body>
+</html>

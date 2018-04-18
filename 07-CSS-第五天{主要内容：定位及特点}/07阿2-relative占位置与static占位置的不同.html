@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <style type="text/css">
+        .one {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            position: relative;
+            top: 50px;/*初始是占位置，但是移动后就跟标准流（静态定位static）不在同一层了,原来位置占着的仍然占着*/
+            z-index: 2;
+        }
+
+        .two {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="one"></div>
+<div class="two"></div>
+
+</body>
+</html>

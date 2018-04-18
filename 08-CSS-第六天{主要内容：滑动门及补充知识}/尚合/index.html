@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="CSS/base.css">
+        <link rel="stylesheet" href="CSS/index.css">
+    </head>
+    <body>
+
+    	 <!-- logo开始 -->
+    	 <div class="logo w  clearfix"><!-- 一个标签可以有多个类，每个其中的类写的选择器都会选中该标签
+                                               若各个类选择器所要设置的样式属性都不一样自然万事大吉，
+                                               若设置相同的样式属性的话就得先看哪个类选择器的权重高，
+                                               如果权重一样大的话就取决于层叠性
+                                               （注意这里的层叠性不是标签中class="logo w  clearfix"类书写的先后顺序，而是在style标签或css文件中选择器样式定义的先后顺序）
+                                               举例:
+                                                <div class="bbb ccc ddd"></div>
+                                                <style>
+                                                    .bbb{
+                                                        font-size = 16px;
+                                                        ...
+                                                    }
+                                                    .ccc{
+                                                        color = red;
+                                                        ...
+                                                    }
+                                                    .ddd{
+                                                        background-color = blue;
+                                                        ...
+                                                    }
+                                                </style>
+                                               注意：以下两种等价于，是当bbb、ccc和ddd三个类选择器的权重一样的前提下
+                                                     如果三个类中所要设置的属性都没有冲突的话，那就不用考虑权重
+                                                     一般一个首页或内容页的每一个部分块（如logo、nav...）的类选择都会是这样.className直接定义的,所以权重都会一样
+                                                     如：<div class="logo w  clearfix">
+                                                     .logo{
+                                                        ...
+                                                     }
+                                                      .w{
+                                                        ...
+                                                     }
+                                                      .clearfix{
+                                                        ...
+                                                     }
+                                                     所以就加一个并列的类相当于在之前的类选择器中添加样式设置代码
+                                               等价于-------------------------------------------------------------------
+                                                <div class="aaa"></div>
+                                                <style>
+                                                    .aaa{
+                                                        font-size = 16px;
+                                                        ...
+                                                    }
+                                                    .aaa{
+                                                        color = red;
+                                                        ...
+                                                    }
+                                                    .aaa{
+                                                        background-color = blue;
+                                                        ...
+                                                    }
+                                                </style>
+                                                等价于-------------------------------------------------------------------
+                                                <div class="aaa"></div>
+                                                <style>
+                                                    .aaa{
+                                                        font-size = 16px;
+                                                        ...
+                                                         color = red;
+                                                        ...
+                                                        background-color = blue;
+                                                        ...
+                                                    }
+                                                </style>
+                                                -->
+    	 	 <div class="left_logo">
+    	 	 	<a href="#">上合</a>
+    	 	 </div>
+
+    	 	 <div class="right_search">
+				 <input type="text" value="请输入条件" class="search">
+				 <input type="button" class="btn">
+			 </div>
+    	 </div>
+
+
+    	 <!-- 导航开始 -->
+    	 <div class="nav">
+    	 	 <div class="w">
+    	 	 	  <ul>
+    	 	 	  	<li><a href="#">首页</a></li>
+    	 	 	  	<li><a href="#">智能手机</a></li>
+    	 	 	  	<li><a href="#">平板电脑</a></li>
+    	 	 	  	<li><a href="#">配件</a></li>
+    	 	 	  	<li><a href="#">服务与支持</a></li>
+    	 	 	  	<li><a href="#">关于上合</a></li>
+    	 	 	  </ul>
+    	 	 </div>
+    	 </div>
+<!-- 版本一：
+结构分析：
+.nav标签是块级元素，没有设置宽度，会弹性继承于父元素（body）的宽度
+.w标签设置宽度为980px
+ul标签是块级元素，没有设置宽度，会弹性继承于父元素（.w）的宽度980px，本身的样式宽度属性值为atuo（也就是说宽度由其内容撑开）
+注：没有设置固定宽度，宽度width默认值为auto
+li标签是块级元素，没有设置宽度，会弹性继承于父元素（ul）的宽度auto，也就是说宽度由其内容撑开
+a标签是行内元素，没有设置宽度，宽度由其内容撑开（所以其大小会根据a标签内文字弹性地变化）
+注：如果给a标签设置固定宽度的话，每个a标签因为内容文字长度不一样，那还得预先估计内容长度，若是还设置padding值还得进行反馈保证元素大小不变
+
+注意：这里的ul弹性继承于父元素（.w）的宽度980px，设置padding和border值是不会改变ul宽度的大小的，这里没有用到这个特性
+关于这个特性的详细分析见../
+-->
+<!--版本二：推翻版本一，有些地方猜想错误，是误解
+结构分析：
+.nav标签是块级元素，没有设置宽度，会弹性继承于父元素（body）的宽度
+.w标签设置宽度为980px
+ul标签是块级元素，没有设置宽度，会弹性继承于父元素（.w）的宽度980px
+li标签是块级元素，没有设置宽度，按理说会弹性继承于父元素（ul）的宽度980px，但是ul和li是一个很特殊的搭配，li标签的宽度不会弹性继承，初始宽度为0，由内容撑开
+注：这里如果在ul标签下放置一个li标签以外的块级元素标签，自然而然会弹性继承于父元素的宽度
+a标签是行内元素，没有设置宽度，初始宽度为0，宽度由其内容撑开（所以其大小会根据a标签内文字弹性地变化）
+
+注：
+1、这些都是可以单独将nav部分代码拎出来测试，在浏览器的开发者工具进行调试观察的（自己要学会做实验探索，自己猜的不算，怎么样浏览器说了算，谁叫页面都是他渲染的呢）
+2、如果给a标签设置固定宽度的话，每个a标签因为内容文字长度不一样，那还得预先估计内容长度，若是还设置padding值还得进行反馈保证元素大小不变
+3、子元素（块级元素）弹性继承于父元素的宽度，设置padding和border值是不会改变其宽度的大小的，这里没有用到这个特性
+关于这个特性的详细分析见../05-CSS-第三天{主要内容：盒子模型 }/13嵌套盒子大小.html
+-->
+<!-- 版本三：推翻版本二，有些地方猜想错误，是误解
+结构分析：
+.nav标签是块级元素，没有设置宽度，会弹性继承于父元素（body）的宽度
+.w标签设置宽度为980px
+ul标签是块级元素，没有设置宽度，会弹性继承于父元素（.w）的宽度980px
+li标签是本来是块级元素，会弹性继承于父元素（ul）的宽度980px，但是设置浮动后就变成行内块元素了，初始宽度为0，由内容撑开
+    要吸取教训啊，别只会呆板的惯性思维，原来是块级元素，但是也可能会被转换了嘛，我了个去
+    设置浮动后，子元素的宽度不会超过父元素的宽度.当子元素长度大于父元素宽度时就会纵向拉伸（经过试验发现的）
+a标签是行内元素，没有设置宽度，初始宽度为0，宽度由其内容撑开（所以其大小会根据a标签内文字弹性地变化）
+
+注：
+1、这些都是可以单独将nav部分代码拎出来测试，在浏览器的开发者工具进行调试观察的（自己要学会做实验探索，自己猜的不算，怎么样浏览器说了算，谁叫页面都是他渲染的呢）
+2、如果给a标签设置固定宽度的话，每个a标签因为内容文字长度不一样，那还得预先估计内容长度，若是还设置padding值还得进行反馈保证元素大小不变
+3、子元素（块级元素）弹性继承于父元素的宽度，设置padding和border值是不会改变其宽度的大小的，这里没有用到这个特性
+关于这个特性的详细分析见../05-CSS-第三天{主要内容：盒子模型 }/13嵌套盒子大小.html
+-->
+<!--
+总结：
+学习就是这样，就是要像这样去思考去探索，提出自己的猜想，然后去验证自己的猜想，中间可能又在不断地否定自己的猜想
+生活中成长也是这样，就是要不停地去尝试，去试错，经过一次又一次跌倒再爬起来，总结获取经验，不断成长
+-->
+    	 <!-- banner部分开始 -->
+    	 <div class="banner">
+    	 	<div class="w">
+    	 		<a href="#">
+    	 	 	   <img src="images/banner.jpg">
+    	 	    </a>
+    	 	</div>
+    	 </div>
+
+
+    	 <!-- 最新公告开始 -->
+    	<div class="news">
+    	 		
+    	 	<div class="w">
+    	 		
+    	 		 <div class="left_news">
+    	 		 	<h4> 最新公告：尚合智能手机，尚合官网</h4>
+    	 		 </div>
+
+    	 		 <div class="right_news">
+    	 		 	 <a href="#">
+    	 		 	 	 <img src="images/zone.png">
+    	 		 	 </a>
+    	 		 	 <a href="#">
+    	 		 	 	 <img src="images/xinlang.png">
+    	 		 	 </a>
+    	 		 	 <a href="#">
+    	 		 	 	 <img src="images/renren.png">
+    	 		 	 </a>
+    	 		 	 <a href="#">
+    	 		 	 	 <img src="images/weibo.png">
+    	 		 	 </a>
+    	 		 </div>
+    	 	</div>
+    	 
+    	 </div>
+
+
+	     <!-- 商品列表 -->
+	     <div class="product  w clearfix">
+	     			
+	     		 <!-- 左侧盒子 -->
+	     		 <div class="l_box">
+	     		 	 <div class="title clearfix">
+	     		 	 	 <i></i>
+	     		 	 	 <h4>新品发布</h4>
+	     		 	 </div>
+				
+					 <div class="content">
+					 	  <img src="images/home_hot_01.png">
+
+					 	  <a href="#" class="lpage">
+					 	  	<img src="images/left.png">
+					 	  </a>
+
+					 	  <a href="#" class="rpage">
+					 	  	 <img src="images/right.png">
+					 	  </a>
+					 </div>
+	     		 </div>
+
+			      <!-- 中间盒子 -->
+	     		 <div class="m_box">
+	     		 	   <div class="title clearfix">
+	     		 	 	 <i></i>
+	     		 	 	 <h4>新闻中心</h4>
+
+	     		 	 	 <a href="#">更多</a>
+	     		 	   </div>
+
+	     		 	   <div class="content">
+	     		 	   	
+	     		 	   	    <ul>
+	     		 	   	    	<li><a href="#" style="color: red;">致歉公告</a></li>
+	     		 	   	    	<li><a href="#">首批尚合已售罄</a></li>
+	     		 	   	    	<li><a href="#">首批尚合已售罄</a></li>
+	     		 	   	    	<li><a href="#">首批尚合已售罄</a></li>
+	     		 	   	    	<li><a href="#">致歉公告</a></li>
+	     		 	   	    	<li><a href="#">致歉公告</a></li>
+	     		 	   	    </ul>
+	     		 	   </div>
+	     		 </div>
+
+	     		 <div class="r_box">
+	     		 	
+	     		 	 <div class="title clearfix">
+	     		 	 	 <i></i>
+	     		 	 	 <h4>技术与支持</h4>
+	     		 	 </div>
+
+	     		 	 <div class="content">
+	     		 	 	
+	     		 	 	 <ul>
+	     		 	 	 	<li>售后服务</li>
+	     		 	 	 	<li>售后服务</li>
+	     		 	 	 	<li>售后服务</li>
+	     		 	 	 	<li>售后服务</li>
+	     		 	 	 </ul>
+
+	     		 	 	 <p>
+	     		 	 	 	深圳市汇聚众合科技发展有限公司
+							服务热线：400-633-7922
+	     		 	 	 </p>
+	     		 	 </div>
+	     		 </div>
+	     </div>
+
+
+
+		 <!-- 结尾部分开始 -->
+
+		 <div class="footer">
+
+		 		 <div class="top_footer">
+		 		 	 <div class="w">
+		 		 	 	 <dl>
+		 		 	 	 	<dt>尚合首页</dt>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 </dl>
+
+		 		 	 	  <dl>
+		 		 	 	 	<dt>尚合首页</dt>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 </dl>
+
+
+		 		 	 	  <dl>
+		 		 	 	 	<dt>尚合首页</dt>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 </dl>
+
+
+		 		 	 	  <dl>
+		 		 	 	 	<dt>尚合首页</dt>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 </dl>
+
+		 		 	 	  <dl>
+		 		 	 	 	<dt>尚合首页</dt>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 </dl>
+
+		 		 	 	  <dl>
+		 		 	 	 	<dt>尚合首页</dt>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 </dl>
+
+		 		 	 	  <dl>
+		 		 	 	 	<dt>尚合首页</dt>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 </dl>
+
+		 		 	 	  <dl>
+		 		 	 	 	<dt>尚合首页</dt>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 	<dd>返回首页</dd>
+		 		 	 	 </dl>
+
+
+		 		 	 	 <a href="#">
+		 		 	 	 	 <img src="images/index_161-175.gif">
+		 		 	 	 </a>
+		 		 	 </div>
+		 		 </div>
+
+
+		 		 <div class="bot_footer">
+		 		 		<p class="p1">服务与支持售后服务服务与支持售后服务</p>
+		 		 		<p class="p2">服务与支持售后服务服务与支持售后服务</p>
+		 		 </div>
+		 </div>
+
+
+
+
+    </body>
+</html>

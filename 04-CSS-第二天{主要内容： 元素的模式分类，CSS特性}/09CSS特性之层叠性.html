@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+☞ 层叠性： 在权重相同的情况下（注意这个前提条件），在同一个标签中样式发生冲突，后面定义样式会将前面定义的样式给覆盖掉。
+ 注意：
+      样式与定义的顺序有关，与调用的顺序无关
+
+-->
+    <head>
+        <meta charset="utf-8">
+
+        <style type="text/css">
+				
+
+			 .one {
+			 	 color: red;
+			 	 font-size: 30px;
+			 }
+
+			 .two {
+			 	 color: pink;
+			 	 font-size: 20px;
+			 }
+
+
+        </style>
+    </head>
+    <body>
+
+    	 <div class="one  two">文字</div>
+    </body>
+</html>

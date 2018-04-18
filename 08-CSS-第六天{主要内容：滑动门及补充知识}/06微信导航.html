@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+
+			 * {
+			 	 margin: 0;
+			 	 padding: 0;
+			 	 list-style: none;
+			 }
+
+			 .nav {
+			 	 height: 76px;
+			 	 padding-left: 200px;
+			 	 background: url(weixin_bg1d20af.jpg);
+			 }
+
+			 .nav li {
+			 	 float: left;
+			 	 margin-right: 5px;
+			 }
+
+			 .nav a {
+			 	 height: 34px;
+			 	 line-height: 34px;
+			 	 display: block;
+			 	 background: url(bg.png) no-repeat  0 -191px;
+                 /*
+                 背景图片分析：background-position分成position（方位）和length（大小）两个部分
+                 position默认值为left top    length默认值为0 0
+                 position决定本标签盒子与背景图片的对齐方位（left top表示本标签的左上角对齐背景图片的左上角）
+                 position决定背景图片移动的距离（浏览器的坐标轴是从左到右为水平方向的正向，从上到下为垂直方向的正向，同理反方向为负向）
+
+                 对于background-position:0 -191px;默认方位是左上角对齐，也就是本标签盒子的左上角对齐背景图片的左上角，
+                                                  然后水平方向不移动，垂直方向向上移动191px
+                 */
+			 	 padding-left: 15px;
+			 	 text-decoration: none;
+			 }
+
+			 .nav span {
+			 	  height: 34px;
+			 	  display: block;
+			 	  background: url(bg.png) no-repeat  right -191px;
+                 /*对于background-position:right -191px;（相当于background-position:right top;和background-position:0 -191px;）
+                 默认方位是左上角对齐，水平方向设置成right，所以方位为右上方，也就是本标签盒子的右上角对齐背景图片的右上角，
+                 然后水平方向不移动，垂直方向向上移动191px
+
+                 同理前面的background-position:right;相当于background-position:right top;和background-position:0 0;
+                 */
+			 	  padding-right: 15px;
+			 }
+
+			 .nav ul {
+			 	 padding-top: 20px;
+			 }
+
+
+			 .nav a:hover {
+			 	 background-position: 0 -143px;
+			 }
+
+			 .nav a:hover span {
+			 	 background-position: right -143px;
+			 }
+        </style>
+    </head>
+    <body>
+
+    	 <div class="nav">
+    	 	 <ul>
+    	 	 	<li><a href="#"><span>首页</span></a></li>
+    	 	 	<li><a href="#"><span>首页首页</span></a></li>
+    	 	 	<li><a href="#"><span>首页首</span></a></li>
+    	 	 </ul>
+    	 </div>
+    </body>
+</html>

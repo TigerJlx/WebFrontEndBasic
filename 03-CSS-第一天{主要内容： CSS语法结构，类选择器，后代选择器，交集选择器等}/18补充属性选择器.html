@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <style type="text/css">
+/*
+☞属性选择器
+语法：
+    [属性名] {属性: 值;}
+属性选择器其它选择方式：
+    [属性=值] {}
+    [属性^=字母] { }  选中属性值以字母开始的标签
+    [属性$=字母] { }  选中属性值以字母结束的标签
+注：开头和结尾与正则表达式语法一样
+    [属性*=字母] {}   选中属性值包含字母的标签
+
+*/
+			 .one {
+			 	 color: red;
+			 }
+
+
+			
+			 /* 属性选择器 */
+			/*  [id][class] {
+			 	 color: green;
+			 } */
+/*这是一个交集选择器（两个选择器紧邻）
+[id]，是一个属性选择器，表示具有id属性的标签
+[id="nav"]，是一个属性选择器，表示具有id属性的标签且id属性值为nav
+[class]，是一个属性选择器，表示具有class属性的标签
+[id][class]，是一个交集选择器，表示既具有id属性又具有class属性的标签
+*/
+
+			/* 属性赋值 */
+			/* [class="two"] {
+				 color: pink;
+			} */
+/*这里等价于.two*/
+
+			/* 以字母o开始 */
+			/* [class^=o] {
+				 color: pink;
+			} */
+
+		    /* 以o结束 */
+			/* [class$=o] {
+				  color: pink;
+			} */
+			
+
+			/* 包含o */
+			[class*=o] {
+				 color: pink;
+			}
+
+
+			
+
+			div[class="one"] {
+				 color: green;
+			}
+ 
+        </style>
+    </head>
+    <body>
+
+    		
+
+    	 <div class="one">123</div>
+    	 <div class="two" id="two">456</div>
+    	 <div class="ooo1" name="username">789</div>
+    </body>
+</html>

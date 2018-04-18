@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <style type="text/css">
+			
+			/* 空伪类，选择内容为空的标签 */
+			/* div:empty {
+				width: 300px;
+				height: 300px;
+				background-color: red;
+			} */
+			
+			/* 排除伪类 */
+			div:not(.two) {
+				 width: 200px;
+				 height: 200px;
+				 background-color: red;
+			}
+
+			div:not(.three) {
+				 width: 200px;
+				 height: 200px;
+				 background-color: red;
+			}
+        </style>
+    </head>
+    <body>
+
+    	  <div class="one two">123123</div>
+
+    	  <div class="one">123</div>
+
+    	  <!-- <div class="three">123123</div> -->
+
+    	 <!-- <div class="box">1231</div>
+    	 <div></div> -->
+    </body>
+</html>

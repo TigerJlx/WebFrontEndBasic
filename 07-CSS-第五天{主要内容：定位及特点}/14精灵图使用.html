@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<!--
+精灵图的产生是为了减少向浏览器要图片的次数，减少流量
+
+精灵图（掌握）
+☞ 精灵图： 是一种特殊的背景图片
+
+☞ 使用：
+     ◇ 给元素设置精灵图为背景图片
+     ◇ 通过background-postion 移动背景图片
+注意：
+   使用fw,精灵图要使用打开方式。
+
+-->
+        <style type="text/css">
+
+			 .search {
+			 	 width: 86px;
+			 	 height: 34px;
+			 	 border: 1px solid green;
+
+			 	 /* 设置精灵图为背景图片 */
+			 	 background-image: url(qq.png);
+			 	 background-repeat: no-repeat;
+
+			 	 /* 移动背景图片位置:  -350px 元素的横坐标    -109px  纵坐标 */
+			 	 background-position: -350px -109px;
+
+
+			 }
+        </style>
+    </head>
+    <body>
+
+    	 <div class="search"></div>
+    </body>
+</html>

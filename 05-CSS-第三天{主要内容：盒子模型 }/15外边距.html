@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<!--
+外边距（margin）
+外边距：
+    盒子与盒子之间的距离。
+        通过padding可以移动盒子中的content，通过margin可以移动盒子本身
+属性联写：
+    与内边距一样。
+注意：
+外边距不会改变盒子大小。
+
+特点：
+◇ 垂直外边距合并 （以最大外边距的值为准）
+    注意：只是垂直方向上
+◇ 垂直外边距塌陷
+    注意：还是只是垂直方向上
+    这是因为父元素没有边，也就是子元素没有那个设置margin-top或margin-bottom的参照物
+    所以设置margin-top时，会以父元素上面元素的底边为参照进行margin填充，这就会造成以父元素为整体的移动了
+    结合上面垂直外边距合并的特性，若是此时填充的margin-top大小小于父元素上面元素的margin-bottom时没有效果，大于时才有效果
+
+    解决办法：
+        ☞ 给父元素设置边框（这就改变了父元素盒子大小了，要想不改变就得给宽高度做减法了）
+        ☞ 给父元素设overflow：hidden;（不会改变父元素的大小）
+            由于overflow：hideen 触发了元素的bfc（格式化上下文）
+                bfc就是将元素设置成一块独立的区域，相当于设置了边框
+-->
+        <style type="text/css">
+
+			 div {
+			 	 display: inline-block;
+			 	 width: 200px;
+			 	 height: 200px;
+			 	 background-color: red;
+
+			 	 
+			 }
+
+			 .one {
+			 	 background-color: pink;
+
+			 	 /* margin-left: 50px;
+			 	 margin-top: 50px;
+			 	 margin-right: 50px;
+			 	 margin-bottom: 50px; */
+
+
+			 	 margin: 10px  20px  30px  40px;
+			 }
+
+
+
+        </style>
+    </head>
+    <body>
+
+    	 <div class="one">div</div>
+    </body>
+</html>

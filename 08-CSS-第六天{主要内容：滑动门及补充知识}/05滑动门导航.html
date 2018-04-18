@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <style type="text/css">
+
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .nav {
+            padding-top: 200px;
+            padding-left: 300px;
+        }
+
+        li {
+            float: left;
+        }
+
+        a {
+            text-decoration: none;
+            height: 35px;
+            line-height: 35px;
+            display: block;
+            background: url(bg_r1_c1.png) no-repeat;
+            padding-left: 7px; /*a标签背景被span标签压着，所以让span标签往右移*/
+            margin-right: 5px;
+        }
+
+        span {
+            height: 35px;
+            display: block;
+            background: url(bg_r1_c2.png) no-repeat right;
+            /*background-position:right;相当于background-position:right top;和background-position:0 0;*/
+            padding-right: 30px; /*盒子大小=边框+padding+内容，所以增加padding会使盒子变大，本标签盒子和背景图片是在右上角方位对齐，所以背景图片就会从新从新增的padding开始布置背景图片*/
+        }
+
+        a:hover { /*选中有鼠标悬停的a标签*/
+            background: url(blue_r1_c1.png) no-repeat;
+        }
+
+        a:hover span { /*选中有鼠标悬停的a标签里面的span标签*/
+            background: url(blue_r1_c2.png) no-repeat right;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="nav">
+
+    <ul>
+        <li>
+            <a href="#">
+                <span>文字</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <span>文字中</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span>文本中阿斯蒂芬</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span>文本中阿斯蒂</span>
+            </a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

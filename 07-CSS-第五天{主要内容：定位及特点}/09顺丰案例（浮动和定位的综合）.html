@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <style type="text/css">
+
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .box {
+            width: 1259px;
+            margin: 0 auto;
+            /*设置position: relative;时，在未进行移动的初始时还未分层（还未脱标），就是和普通标准流是一样的，所以这中居中方式还是生效的
+            若设置position: absolute;的，这种居中方式是不会生效的（初始时就已经脱标了）*/
+
+            position: relative;
+        }
+
+        .nav {
+            width: 960px;
+            height: 60px;
+            line-height: 60px;
+            background-color: #000;
+
+            position: absolute;
+            left: 50%;
+            margin-left: -480px;
+            bottom: 0;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        .nav li {
+            float: left;
+        }
+
+        .nav a {
+            height: 60px;
+            width: 160px;
+            display: block;
+            text-align: center;
+
+        }
+
+        .nav a:hover {
+            background-color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <a href="#">
+        <img src="sf.png">
+    </a>
+
+    <div class="nav">
+        <ul>
+            <li><a href="#">运单查询</a></li>
+            <li><a href="#">运费查询</a></li>
+            <li><a href="#">时效查询</a></li>
+            <li><a href="#">服务网点查询</a></li>
+            <li><a href="#">收送范围查询</a></li>
+            <li><a href="#">客户专区</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

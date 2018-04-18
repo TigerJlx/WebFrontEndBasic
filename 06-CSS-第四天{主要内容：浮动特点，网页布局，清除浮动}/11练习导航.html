@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+			
+			* {
+				 margin: 0;
+				 padding: 0;
+				 list-style: none;
+			}
+
+			.nav {
+				 line-height: 50px;/*这个属性有继承性，一般放在父元素中让多个子元素继承*/
+				 background-color: #458FD2;
+			}
+            /*.nav的height是由.w撑起来的*/
+			.w {
+                background-color: red;
+				 width: 1096px;
+				 height: 50px;/*注释掉,观察效果进行对比*/
+				 margin: 0 auto;
+			}
+
+			.l_list {
+                border: 1px solid blue;
+				 float: left;
+			}
+
+			.r_list {
+                border: 1px solid blue;
+				 float: right;
+			}
+
+			.nav li {
+				 float: left;/*设置浮动后，就脱标表现为行内块元素的特点，默认宽高都为0，有子元素撑开*/
+			}
+
+			.nav li a {/*line-height是设置文本的，从nav一路继承过来，到a中才有文本生效，a标签在未设置边框和padding的情况下，使得a标签width为line-height高度
+			            然后li标签由a标签撑开，所以li标签为line-height高度，l_list、r_list是由li标签撑开所以高度同样为line-height*/
+				 padding: 0 15px;
+				 color: #fff;
+				 text-decoration: none;
+			}
+
+			.nav li a:hover {
+				 color: #474E5D;
+			}
+        </style>
+    </head>
+    <body>
+
+    	 <div class="nav">
+    	 	  <div class="w">
+    	 	  		
+    	 	  	  <div class="l_list">
+    	 	  	  	
+    	 	  	  		 <ul>
+    	 	  	  		 	<li><a href="#">前端开发</a></li>
+    	 	  	  		 	<li><a href="#">前端开发</a></li>
+    	 	  	  		 	<li><a href="#">前端开发</a></li>
+    	 	  	  		 	<li><a href="#">前端开发</a></li>
+    	 	  	  		 </ul>
+    	 	  	  </div>
+
+    	 	  	  <div class="r_list">
+    	 	  	  	
+    	 	  	  	    <ul>
+    	 	  	  	    	<li><a href="#">全栈开发</a></li>
+    	 	  	  	    	<li><a href="#">全栈开发</a></li>
+    	 	  	  	    	<li><a href="#">全栈开发</a></li>
+    	 	  	  	    	<li><a href="#">全栈开发</a></li>
+    	 	  	  	    	<li><a href="#">全栈开发</a></li>
+    	 	  	  	    </ul>
+    	 	  	  </div>
+
+    	 	  </div>
+    	 </div>
+
+    </body>
+</html>

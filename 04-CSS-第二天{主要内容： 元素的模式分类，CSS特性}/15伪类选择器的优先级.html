@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+        分析：第一个是伪类交集选择器，第二个是类交集选择器
+              伪类和类选择器权重一样，所以两个权重一样
+              a:hover放前面会被覆盖
+
+        a:hover {
+            color: green;
+            font-size: 50px;
+        }
+        a.two{
+            color: red;
+            font-size: 10px;
+        }*/
+
+        /*
+        分析：第一个是伪类交集选择器，第二个是类交集选择器
+              伪类和类选择器权重一样，所以两个权重一样
+              a:hover放后面不会被覆盖
+        a.two{
+            color: red;
+            font-size: 10px;
+        }
+        a:hover {
+            color: green;
+            font-size: 50px;
+        }*/
+
+        /*
+        分析：第一个是类选择器，第二个是伪类选择器+标签选择器，所以第二个权重更高
+              所以悬停样式生效
+        .two{
+            color: red;
+            font-size: 10px;
+        }
+        a:hover {
+            color: green;
+            font-size: 50px;
+        }*/
+
+        /*
+         分析：第一个是伪类选择器+标签选择器，第二个是类选择器，所以第一个权重更高
+              所以悬停样式不会被覆盖
+        a:hover {
+            color: green;
+            font-size: 50px;
+        }
+        .two{
+            color: red;
+            font-size: 10px;
+        }*/
+
+        /*
+        分析：第一个是伪类交集选择器，第二个是类交集选择器
+              伪类和类选择器权重一样，所以两个权重一样
+              所以悬停样式覆盖不覆盖取决于层叠性*/
+        a:hover {
+            color: green;
+            font-size: 50px;
+        }
+       .one a{
+           color: red;
+           font-size: 10px;
+       }
+
+
+</style>
+</head>
+<body>
+<div class="one">
+    <a href="#" class="two">123</a>
+</div>
+</body>
+</html>

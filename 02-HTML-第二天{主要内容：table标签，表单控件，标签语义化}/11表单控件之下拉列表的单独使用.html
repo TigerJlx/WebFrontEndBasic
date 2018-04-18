@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*初始化相当重要，这次就是被初始化给害死了，下次别忘了初始化*/
+        body,p,ul,dl,ol,li,dt,dd {
+            margin:0;
+            padding:0;
+        }
+
+        .w{
+            width: 980px;
+            /*height: 50px;*/
+            margin: 0 auto;
+            /*background-color: red;*/
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            float: left;
+            padding: 0 20px 0 20px;
+            line-height: 50px;
+
+        }
+
+        .nav2 .select{
+            height: 50px;
+            width: 80px;
+            overflow: hidden;
+        }
+        .nav2 .visible{
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background-color: red;
+        }
+        .nav2 .hidden{
+            text-align: center;
+            background-color: orange;
+        }
+        .nav2 .select:hover{
+            overflow: visible;
+        }
+        dd.abc{
+            height: 30px;
+            border: 1px solid red;
+            line-height: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="nav1">
+    <div class="w">
+        <ul>
+            <li>
+                <select>
+                    <option>河北</option>
+                    <option>河南</option>
+                    <option>山东</option>
+                    <option selected>标题1</option>
+                </select>
+            </li>
+            <li>标题2</li>
+            <li>标题3</li>
+            <li>标题4</li>
+            <li>标题5</li>
+        </ul>
+    </div>
+    <!--清除浮动-->
+    <div style="clear:both;"></div>
+</div>
+
+<div class="nav2">
+    <div class="w">
+        <ul>
+            <li>
+                <div class="select">
+                    <div class="visible">标题1</div>
+                    <div class="hidden">
+                        <dl>
+                            <dd class="abc">河北</dd>
+                            <dd class="abc">河南</dd>
+                            <dd class="abc">山东</dd>
+                        </dl>
+                    </div>
+                </div>
+            </li>
+            <li>标题2</li>
+            <li>标题3</li>
+            <li>标题4</li>
+            <li>标题5</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

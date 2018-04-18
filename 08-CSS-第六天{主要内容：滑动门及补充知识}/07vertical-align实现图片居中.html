@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <style type="text/css">
+			
+			 .box {
+			 	 width: 300px;
+			 	 height: 300px;
+			 	 border: 1px solid red;
+
+                 line-height: 300px;/*使图片垂直居中*/
+			 	 text-align: center;/*使图片水平居中*/
+			 } /*事先可以在div标签中添加文字进行比对*/
+/*line-height不是可以设置行内块元素的居中，是设置文本的居中，加上vertical-align: middle;的设置间接就实现垂直方向上行内块元素的居中了*/
+			 img {
+			 	 vertical-align: middle;
+			 }
+
+        </style>
+    </head>
+    <body>
+
+    	 <div class="box">
+    	 	 <img src="2.png">
+    	 </div>
+    </body>
+</html>

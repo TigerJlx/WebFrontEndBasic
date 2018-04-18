@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+注意：
+    1. 可以把行内元素，块级元素，转化为任何一种元素
+    2. 行内块元素转化行内元素没有效果
+        由行内块元素设置display属性转换成行内元素，已经具备的宽高度不会消失
+    3. 一般情况下会将行内元素进行转化
+        因为经常要设置标签的宽高度
+
+-->
+    <head>
+        <meta charset="utf-8">
+
+        <style type="text/css">
+
+			 a {
+			 	 width: 300px;
+			 	 height: 300px;
+			 	 background-color: red;
+			 	 /* 转换为行内块元素 */
+			 	 /* display: inline-block; */
+			 }
+
+			 div {
+			 	 background-color: red;
+			 	 /* 转换为行内元素 */
+			 	 display: inline;
+			 }
+
+            img{
+
+                display: inline;
+                height: 500px;width: 500px;
+            }
+        </style>
+    </head>
+    <body>
+
+    	  <div>我是块级元素</div>
+
+    	  <a href="#">行内元素</a>
+
+    	  <a href="#">行内元素</a>
+
+    <img src="2.png" ></img>
+
+    </body>
+</html>

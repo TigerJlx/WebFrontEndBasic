@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .aaa dl,dt,dd,ul,li,ol{
+            padding:0;
+            margin:0;
+            list-style: none;
+        }
+    </style>
+
+</head>
+<body>
+<p>1.ul是无序列表，也就是说没有排列限制可以随意加li； </p>
+<ul>
+<li>可以随意放置</li>
+<li>可以随意放置</li>
+<li>可以随意放置</li>
+</ul>
+
+
+<p>2.ol就序列表，会按照你写的li前后依次排列； </p>
+<ol>
+<li>我是第一</li>
+<li>我是第二</li>
+<li>我是第三</li>
+</ol>
+
+<p>3.dl是定义列表，会默认前后层级关系；</p>
+<dl>
+<dt>我是头</dt>
+<dd>我是内容</dd>
+<dd>我是内容</dd>
+</dl>
+
+<p>将三种弄成一样，dl的优势在于区分头和其它成员</p>
+<div class="aaa">
+    <ul>
+<li>可以随意放置</li>
+<li>可以随意放置</li>
+<li>可以随意放置</li>
+</ul>
+<ol>
+<li>我是第一</li>
+<li>我是第二</li>
+<li>我是第三</li>
+</ol>
+<dl>
+<dt>我是头</dt>
+<dd>我是内容</dd>
+<dd>我是内容</dd>
+</dl>
+</div>
+</body>
+</html>

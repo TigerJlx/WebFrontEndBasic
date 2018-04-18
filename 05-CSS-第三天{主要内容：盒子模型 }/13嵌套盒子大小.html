@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <style type="text/css">
+			 .box {
+			 	 width: 400px;
+			 	 height: 200px;
+			 	 background-color: green;
+			 }
+	/*就是利用block子元素标签从父元素"弹性继承"宽度这个特点（相当重要）
+	0、初始时，子元素content宽度=父元素的宽度(注意：宽高度指的是content的宽高度)
+	1、子元素设置padding值小于父元素宽度时，子元素content宽度=父元素的宽度减去子元素的padding所剩下的（border同理）
+	    也就是说此时子元素的总大小（border+padding+content）还是等于父元素的宽度
+	    父元素宽度为400px,子元素设置border为xpx，设置padding-left为ypx,所以弹性的content宽度=(400 - x - y)px
+	与普通元素对比：普通设置padding-left和padding-right值，元素宽度就对应增加这部分长度
+	所以在这种情况下content宽度会做出弹性改变，随便改变padding值是不会改变元素的总宽度的
+	也就是说弹性继承状态下，只要padding值小于父元素的宽度，可以随便设置来移动内容，不用对元素大小进行反馈来保证原大小不变
+	应用案例见<14案例.html>
+
+	2、子元素设置padding值大于父元素宽度时，子元素content宽度=0
+	    此时子元素的宽度=border+padding
+	总结：
+	之所以说是弹性继承的原因：
+	    1、不是真的继承，但有继承的特点
+	    2、会根据不情况作出弹性的改变
+	注意：前提是你没有给子元素设置width，width弹性继承于父元素
+	      所以今后你在给元素设定padding值的时候，若没有设定width就是弹性继承不用考虑会改变元素盒子的大小
+	                                             若设定了width的值的话，改变了padding就会改变元素盒子的大小，这就需要校正了
+
+	总结：一般来说改变元素的padding就会改变该元素盒子的大小，但是这种子元素弹性继承的情况就不一样
+	*/
+			 .one {
+				 height: 100px;
+				 background-color: pink;
+				 /* padding-left: 50px; */
+                 border: 2px solid red;
+				 padding-left: 390px;
+			 }
+        </style>
+    </head>
+    <body>
+
+    	 <div class="box">
+    	 	
+    	 	 <div class="one">one中的文字</div>
+    	 </div>
+    </body>
+</html>

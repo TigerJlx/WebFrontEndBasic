@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <style type="text/css">
+/*
+注意：
+1.  属性联写中必须设置font-size 和font-family
+2.  在属性联写中font-size 必须放到font-family前面设置(由css的层叠特性决定)
+3.  如果font属性联写中的属性都要设置，那么按照图片中的属性去设置。
+//font-style和font-weight这两可以调换位置，但是这两不能放在font-size、font-family这些后面
+//所以为避免出错，严格按照顺序来
+
+//font的联写属性要求比较多，没有必要去记，一般不联写，单独写各个font-
+（font-size、font-weight、font-sytle、font-family）、line-height也归为一类
+font是设置文本，还有text-也是设置文本
+常用的有text-decration、text-transform、text-align
+
+一般与文本相关的可以继承，其实也不用刻意地去记哪些可以继承，大不了再在子元素内再写一行，也不碍事
+ */
+			  p {
+			  	 /*  font-size: 30px;
+			  	  font-weight: 700;
+			  	  font-style: italic;
+			  	  font-family: 微软雅黑;
+			  	  /* 行高 */
+			  	  /* line-height: 20px; */ 
+
+			  	  /* font: italic 700 30px/20px 微软雅黑; */
+
+			  	  font: 30px 宋体;
+			  }
+        </style>
+    </head>
+    <body>
+    	 <p>文字</p>
+    </body>
+</html>

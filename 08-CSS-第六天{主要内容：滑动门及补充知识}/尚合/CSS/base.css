@@ -1,0 +1,50 @@
+/*
+* @Author: dhl
+* @Date:   2017-03-12 16:38:47
+* @Last Modified by:   dhl
+* @Last Modified time: 2017-03-12 16:45:39
+*/
+
+
+/* 全局css */
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,dl,dt,dd,li {
+	 margin: 0;
+	 padding: 0;
+	 list-style: none; /*清除列表图标*/
+	 font-size: 14px;
+	 font-family: 宋体;
+	 color: #000;
+}
+
+a {
+	 color: #000;
+	 text-decoration: none; /*清除下划线*/
+}
+
+input,img {
+	vertical-align: middle; /*校正行内块元素垂直方向的对齐方式*/
+	border: 0 none; /*去掉边框*/
+	outline-style: none; /*去掉轮廓线*/
+	padding: 0;
+	margin: 0;
+}
+
+/* 清除浮动 */
+.clearfix:after {
+	 content: "";
+	 height: 0;
+	 line-height: 0;
+	 display: block;
+	 clear: both;
+	 visibility: hidden;
+}
+.clearfix {
+	 zoom: 1;
+}
+
+
+/* 版心 */
+.w {
+	width: 980px;
+	margin: 0 auto;
+}

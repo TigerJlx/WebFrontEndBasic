@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+<!--
+    属性
+        border    设置边框
+        width     设置宽度
+        height    设置高度
+        cellspacing  设置td与td之间的距离
+                   默认值是2
+        cellpadding  设置内容与td左侧的距离
+        align：  left |  center | right   设置对齐方式
+            注意：
+            1. 如果给table标签设置align属性，只能让整个标签居中，内容不会居中
+            2. 给tr或者td设置align属性，可以让其内容居中
+        bgcolor：  设置背景颜色
+-->
+
+
+<table border="1" width="400" height="300" cellspacing="0" cellpadding="0" align="center" bgcolor="pink">
+<!--注意：
+有了CSS，这些跟样式相关的属性的属性就可以统统不要了
+具体内容参见下一篇<06表格new.html>
+-->
+    <caption>人员信息表</caption><!--设置表格标题-->
+
+    <tr><!--其实th和tr的区别仅仅只是默认样式不同而已-->
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>体重</th>
+        <th>职业</th>
+    </tr>
+    <!--表头有默认样式会加粗显示并居中，其它表行想要居中就得在tr中将align设置为center-->
+    <tr align="center">
+        <td>赵建</td>
+        <td>18</td>
+        <td>80</td>
+        <td>挖掘机</td>
+    </tr>
+    <tr align="center">
+        <td>陈宇</td>
+        <td>20</td>
+        <td>60</td>
+        <td>权栈攻城狮</td>
+    </tr>
+    <tr align="center">
+        <td>小段</td>
+        <td>20</td>
+        <td>60</td>
+        <td>空姐</td>
+    </tr>
+
+    <!--table>tr*5>td*4-->
+
+</table>
+</body>
+</html>

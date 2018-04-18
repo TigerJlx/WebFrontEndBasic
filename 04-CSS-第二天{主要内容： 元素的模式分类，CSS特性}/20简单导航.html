@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <style type="text/css">
+			
+			 .nav {
+			 	 height: 50px;
+			 	 background-color: #ccc;
+			 	 text-align: center;
+			 }
+
+			 .nav a{
+			 	  /* 去掉下划线 */
+			 	  text-decoration: none;
+			 	  width: 150px;
+			 	  height: 50px;
+			 	  display: inline-block;
+			 	  color: red;
+			 }
+			 /*如果是这样权重就不够，样式会被覆盖，以至于此样式是不会生效的，所以在前面加一个类选择器增加权重
+			 .public {
+				 color: black;
+			 }*/
+
+			 .nav .public {
+			 	 color: black;
+			 }
+			/*如果是这样权重就不够，样式会被覆盖，以至于悬停样式是不会生效的，所以在前面加一个类选择器增加权重
+			总结：
+			所以说权重是相当重要的，要特别注意所写好的样式会不会覆盖的问题，也就是要保证它生效
+			对于上面这种的.nav .public是带有攻击性的，想将原有的样式给覆盖掉，从而增加权重
+			对于这里的.nav a:hover这种伪类选择器单纯就是为了自保，保证生效不会被覆盖，从而增加权重
+			 a:hover {
+				 color: red;
+				 text-decoration: underline;
+				 background-color: green;
+				 color: red;
+			 }*/
+
+		  	 .nav a:hover {
+                color: yellow;
+                text-decoration: underline;
+                background-color: green;
+
+		  	}
+        </style>
+    </head>
+    <body>
+		 <!-- 导航 -->
+    	 <div class="nav">
+    	 	  <a href="#">天猫</a>
+    	 	  <a href="#">天猫1</a>
+    	 	  <a href="#">天猫2</a>
+    	 	  <a href="#" class="public">天猫3asdasdf</a>
+    	 	  <a href="#" class="public">天猫4天</a>
+    	 	  <a href="#" class="public">天猫5天猫5</a>
+    	 </div>
+    </body>
+</html>

@@ -1,0 +1,257 @@
+/*
+前端的页面设计，结构性框架是首要的重点！
+比如说，HTML结构上：
+body分成part1和part2
+那就先写part1，其中part1又分成part1.1和part1.2
+那就先写part1.1，其中part1又分成part1.1.1和part1.1.2
+那就先写part1.1.1的HTML，同时写对应的CSS
+然后是part1.1.2
+回到part1.2，同理那就先写part1.2.1然后是part1.2.2
+直到把part1写完，再开始写part2
+......
+就是通过这样的方式，就不会一下就塞太多东西，可以化繁为简，化整为零，各个细节再慢慢各个击破！！！
+
+注意:
+1、CSS是对应着给HTML设置样式，所以结构必须严格对应着（代码编写时可以采取如下的方式，拥有良好的代码规范习惯），这样你的思路才不会乱
+2、CSS是对应HTML同时进行编写的，而不是分开的
+
+HTML+CSS完成的页面是"死"的，要想变成"活"的就得靠javascript了
+
+总结：
+结构性框架不仅对于HTML和CSS是至关重要的，其实对于任何一种编程语言都是至关重要的
+思考问题的方式就是得像这样有一种全局把控的思维
+一个项目分成哪几个大的部分，然后一个部分一个部分地攻破，第一个部分又分成哪几个小部分，然后开始第一个小部分，第一个小部分又分成..........
+    如：之前测试的脚本。
+    先别急着动手糊里糊涂地瞎干，拿到一个项目时就明确目标和需求；
+    明白之后就开始分析，做这件事要分成哪几个大步骤（1、准备数据进行输入，2、数据处理，3、数据输出进行展示或存储）
+    然后先做第一个部分，做第一个部分又要分成哪几个步骤（1.1 1.2 1.3 .......）
+    和HTML、CSS的思路是一样的
+本质就是化繁为简，毕竟复杂的东西（大）都是由一个个简单的东西（小）累积起来的
+今后你不管是拿到一个个大部分还是一个小部分，完成你自己的部分其实就是一个项目，你再把你的项目进行细分，由大到小，再由小到大！！！
+整个过程就是由大到小，再分别完成各个小的部分，也就是是由小到大！！！
+
+
+人与人的之间最大的区别是什么？
+    就是思维！思考问题的方式不一样，好的思维方式会让你事半功倍，掌控全局
+    对于编程而言这样结构框架性思维相当重要，其实也可以类比到生活中去！
+
+其实编程的过程中也是可以总结很多生活成长的哲理的:
+比如这个结构性框架思维用于演讲，用于学习
+之前那个不断猜想，不断试验，不断否定，再不断猜想......最终得到真理，很生活中不断试错，不断碰壁，最终收获人生宝贵财富是一个道理
+*/
+/*Part1: logo---------------------------------------------------------------------------------------------------------*/
+.logo {
+    margin-top: 10px;
+}
+        /*Part1.1: logo左边图标*/
+        .left_logo{
+            float: left;
+            text-indent: -1000px;
+        }
+                .left_logo a{
+                    display: block;
+                    width: 179px;
+                    height: 39px;
+                    background: url("../images/logo.jpg") no-repeat;
+                }
+
+        /*Part1.2: logo右边搜索框*/
+        .right_search{
+            float: right;
+            border: 1px solid #D2D2D2;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            border-radius: 6px;
+        }
+                /*input输入框元素是有默认宽度的，和div不一样，div只是一个容易，而input是一个组件*/
+                .right_search .search{
+                    line-height: 32px;
+                    background-color: #F5F5F5;/*背景颜色*/
+                    color: #ACACAC;/*文字颜色*/
+                    float: left;
+                    padding-left: 5px;
+                }
+                .right_search .btn{
+                    width: 33px;
+                    height: 32px;
+                    background: url("../images/search2.jpg") no-repeat right;
+                    float: left;
+                }
+
+
+
+/*Part2: nav----------------------------------------------------------------------------------------------------------*/
+.nav{
+    border-top: 1px solid #ccc;
+    background: url(../images/nav_bg.png);
+    height:55px;
+}
+        /*Part2.1: */
+        .nav li {
+            float: left;
+            line-height: 55px;
+            background: url(../images/nav_bg-line.png)  no-repeat right;
+        }
+                .nav li a {
+                    padding: 0 35px;
+                }
+                .nav li a:hover {
+                    color: red;
+                }
+
+
+
+/*Part3: banner-------------------------------------------------------------------------------------------------------*/
+
+
+
+/*Part4: news---------------------------------------------------------------------------------------------------------*/
+.news{
+    line-height: 30px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background-color: #FBFBFB;
+    height: 30px;
+}
+        /*Part4.1: */
+        .l_news{
+            float: left;
+        }
+
+        /*Part4.2: */
+        .r_news{
+            float: right;
+        }
+
+
+
+/*Part5: product------------------------------------------------------------------------------------------------------*/
+.product{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 250px;
+}
+        /*Part5.0: 左中右三个盒子公用*/
+        .product .arrow{
+            float: left;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        .product .title{
+            float: left;
+            color: green;
+        }
+
+        /*Part5.1: */
+        .product .l_box{
+            height: 250px;
+            width: 320px;
+            float: left;
+            border: 1px solid #ccc;
+            background-color: #FBFBFB;
+            margin-right: 7px;
+        }
+                .product .l_box .bottom{
+                    text-align: center;
+                    position: relative;
+                }
+                        .product .l_box .bottom .main{
+                            line-height: 220px;
+                        }
+                        .product .l_box .bottom .page{
+                            position: absolute;
+                            top: 100px;
+                        }
+                            .product .l_box .bottom .l_arrow{
+                                left: 20px;
+                            }
+                            .product .l_box .bottom .r_arrow{
+                                right: 20px;
+                            }
+
+        /*Part5.2: */
+        .product .m_box{
+            height: 250px;
+            width: 320px;
+            float: left;
+            border: 1px solid #ccc;
+            background-color: #FBFBFB;
+            margin-right: 7px;
+        }
+                .product .m_box .top .more{
+                    float: right;
+                    margin-top: 5px;
+                    margin-right: 10px;
+                }
+                .product .m_box .bottom ul{
+                    margin-left: 20px;
+                }
+                .product .m_box .bottom li{
+                    padding: 10px 0 5px 0;
+                    border-bottom: 1px dashed darkgrey;
+                }
+
+        /*Part5.3: */
+        .product .r_box{
+            height: 250px;
+            width: 320px;
+            float: right;
+            border: 1px solid #ccc;
+            background-color: #FBFBFB;
+        }
+                .product .r_box .middle ul{
+                    margin-top: 10px;
+                    margin-left: 20px;
+                }
+                .product .r_box .middle li{
+                    margin-top: 5px;
+                    border-left: 4px solid yellowgreen;
+                    padding-left: 5px;
+
+                }
+                .product .r_box .bottom {
+                    margin: 50px 0 0 10px;
+
+                }
+                .product .r_box .bottom p{
+                    margin-bottom: 5px;
+
+                }
+
+
+
+/*Part6: footer-------------------------------------------------------------------------------------------------------*/
+.footer{
+    background-color: #232121;
+}
+        .footer .up{
+            height: 200px;
+            border-bottom: 1px dashed lavender;
+        }
+                .footer .up dl{
+                     float: left;
+                     padding-right: 50px;
+                 }
+                .footer .up dt{
+                    color: #dddddd;
+                    font-size: 18px;
+                }
+                .footer .up dd{
+                    color: #dddddd;
+                }
+                .footer .up .main{
+                    position: relative;
+                }
+                .footer .up a{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+
+        .footer .down{
+            height: 100px;
+            text-align: center;
+        }
+                .footer .down p{
+                    padding: 10px 10px 10px 10px;
+                }

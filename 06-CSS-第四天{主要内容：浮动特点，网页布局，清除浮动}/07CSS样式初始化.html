@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<!--
+为了考虑到浏览器的兼容性问题，其实不同浏览器对有些标签的默认值是不同的，
+如果没对CSS初始化往往会出现浏览器之间的页面差异
+
+初始化css可以直接去搜狐、京东和淘宝等大型网站的初始化拿过来
+也可以写适合自己的初始化，如下：
+-->
+    <style type="text/css">
+        /*块级元素，h标签比较特殊，其文字样式权重大于继承样式---------------------------------------------------------*/
+        body, p, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd {
+            margin: 0;
+            padding: 0;
+
+            list-style: none;
+
+            font-size: 12px;
+            font-family: "宋体", "微软雅黑";
+
+            color: #000;
+        }
+
+        /*行内元素，a标签比较特殊，其默认颜色样式权重大于继承样式-----------------------------------------------------*/
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: red;
+            text-decoration: underline;
+        }
+
+        /*行内块元素--------------------------------------------------------------------------------------------------*/
+        img, input {
+            color: #000;
+            margin: 0;
+            padding: 0;
+            border: 0 none;
+            outline-style: none;/*去轮廓线，firefox浏览器似乎没有这个属性*/
+        }
+
+        /*清除浮动----------------------------------------------------------------------------------------------------*/
+        .clearfix:after {
+            content: "";
+            height: 0;
+            line-height: 0;
+            display: block;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .clearfix {/*为了兼容IE浏览器*/
+            zoom: 1;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+</body>
+</html>

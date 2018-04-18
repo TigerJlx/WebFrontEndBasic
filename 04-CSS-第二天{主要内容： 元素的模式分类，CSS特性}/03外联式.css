@@ -1,0 +1,19 @@
+/*
+* @Author: dhl
+* @Date:   2017-03-06 09:47:47
+* @Last Modified by:   dhl
+* @Last Modified time: 2017-03-06 09:51:06
+*/
+
+
+div {
+	 /* font-style: 30px; */
+	 font-size: 30px;
+	 color: red;
+}
+
+.one {
+	 width: 300px;
+	 height: 300px;
+	 background-color: red;
+}

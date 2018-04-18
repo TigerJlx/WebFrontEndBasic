@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+<!--
+表单控件如果不是用来提交数据，可以单独按需使用,不是非得在form标签中
+-->
+
+<!-- 表单域 -->
+<form action="1.php" method="post">
+
+    <fieldset><!--分组控件，可将一个form表单分成几部分-->
+
+        <legend>人员注册信息</legend><!--对应分组控件的标题-->
+        <!--
+        ☞ 文本输入框 <input type=”text”>
+		   属性：
+                maxlength   设置最大长度
+                readonly    设置控件为只读（不可写），获取不到输入光标
+                disabled    禁止用户输入
+                value      设置默认值
+                name      设置控件名称，表单键值对的"键"
+                id         控件编号
+        -->
+        昵称：
+        <input type="text" maxlength="6"  value="请输入昵称" name="username" id="">
+        <!--属性的属性不需要写的时候，可以省去等号和属性值-->
+        <br>
+        <br>
+        <!--
+        ☞ 密码输入框 <input type=”password”>
+			  该控件属性与文本输入框的属性一样。
+        -->
+        密码：
+        <input type="password" name="mima">
+
+        <br>
+        <br>
+        <!--
+        ☞ 单选控件 <input  type="radio">
+        注意：　该控件实现单选效果需要给控件设置相同的name名称。
+        属性： checked  设置控件默认选中项
+        -->
+        性别：
+        <input type="radio" name="gender" checked value="1"> 男
+        <input type="radio" name="gender" value="0"> 女
+
+        <br>
+        <br>
+        <!--
+        属性：
+            selected   设置默认选中项
+            multiple     实现多选效果
+        -->
+        籍贯：
+        <select name="jiguan">
+            <option>河北</option>
+            <option>河南</option>
+            <option>山东</option>
+            <option selected>山西</option>
+        </select>
+
+
+        其他写法：
+        <select>
+
+            <optgroup label="河北省">
+                <option>张家口</option>
+                <option>石家庄</option>
+                <option>保定</option>
+                <option>邯郸</option>
+                <option>张北</option>
+            </optgroup>
+        </select>
+
+
+        <br>
+        <br>
+        <!--
+        ☞ 多选控件
+        <input type=”checkbox”>
+        属性：
+            checked  设置默认选中项
+        -->
+        爱好：
+        <input type="checkbox" checked name="aihao" value="0"> 看书
+        <input type="checkbox" checked name="aihao" value="1"> 学习
+        <input type="checkbox" name="aihao" value="2"> 旅游
+        <input type="checkbox"  value="3"> 玩游戏
+
+        <br>
+        <br>
+
+        请上传头像：
+        <input type="file" name="touxiang">
+
+
+        <br>
+        <br>
+
+        文本域： <textarea></textarea>
+
+        <!-- 隐藏控件, 以后遇到了再说 -->
+        <input type="hidden" value="1" name="">
+
+
+        <br>
+        <br>
+        <!--
+        ☞ 按钮
+            ◇ 提交按钮    <input type="submit"> （提交表单数据)
+            ◇ 普通按钮   <input type=”button”> (不能提交表单数据)
+            ◇ 重置按钮   <input type="reset"> (将数据恢复到默认值)
+            ◇ 图片提交按钮
+            <input type="image" src="按钮.jpg">（提交表单数据）
+        -->
+        <!-- 提交按钮 -->
+        <input type="submit">
+
+
+        <input type="button" value="按钮" name="button">
+
+
+        <input type="reset">
+
+
+        <!-- 图片提交按钮 -->
+        <input type="image" src="favicon.ico" name="image_btn">
+
+
+    </fieldset>
+
+</form>
+</body>
+
+</html>
+

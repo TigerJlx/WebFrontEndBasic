@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <style type="text/css">
+
+
+        /* div p {
+             color: red;
+        }
+
+        div p {
+             color: green;
+        } *//*两个标签选择器的权重叠加*/
+
+        /*  div.one p.two {
+             color: red;
+         }
+
+         div.one p.two {
+            color: blue;
+         } *//*标签选择器的权重 + 类选择器的权重 + 标签选择器的权重 + 类选择器的权重*/
+
+        .one p {
+
+        }
+
+        .one p {
+
+        }
+    </style>
+</head>
+<body>
+
+<div class="one" id="two">
+    <p class="two">文字</p>
+    <p class="two">123</p>
+</div>
+
+</body>
+</html>

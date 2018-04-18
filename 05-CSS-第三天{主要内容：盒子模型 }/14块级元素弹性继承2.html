@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+        /* 全局css */
+
+        body,p,h1,h2,h3,h4,h5,h6,ul,ol,dl,dt,dd,li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 14px;
+            font-family: 宋体;
+            color: #000;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        input,img {
+            vertical-align: middle;
+            border: 0 none;
+            outline-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* 清除浮动 */
+        .clearfix:after {
+            content: "";
+            height: 0;
+            line-height: 0;
+            display: block;
+            clear: both;
+            visibility: hidden;
+        }
+        .clearfix {
+            zoom: 1;
+        }
+
+
+        /* 版心 */
+        .w {
+            width: 980px;
+            margin: 0 auto;
+        }
+        /* 导航开始 */
+        .nav {
+            height: 55px;
+            border-top: 1px solid #ccc;
+            background-color: pink;
+        }
+/*
+结构分析：
+.nav标签是块级元素，没有设置宽度，会弹性继承于父元素（body）的宽度
+.w标签设置宽度为980px
+ul标签是块级元素，没有设置宽度，会弹性继承于父元素（.w）的宽度980px
+li标签是本来是块级元素，会弹性继承于父元素（ul）的宽度980px，但是设置浮动后就变成行内块元素了，初始宽度为0，由内容撑开
+    设置浮动后，子元素的宽度不会超过父元素的宽度.当子元素长度大于父元素宽度时就会纵向拉伸（经过试验发现的）?????
+a标签是行内元素，没有设置宽度，初始宽度为0，宽度由其内容撑开（所以其大小会根据a标签内文字弹性地变化）
+
+注：
+1、这些都是可以单独将nav部分代码拎出来测试，在浏览器的开发者工具进行调试观察的（自己要学会做实验探索，自己猜的不算，怎么样浏览器说了算，谁叫页面都是他渲染的呢）
+2、如果给a标签设置固定宽度的话，每个a标签因为内容文字长度不一样，那还得预先估计内容长度，若是还设置padding值还得进行反馈保证元素大小不变
+3、子元素（块级元素）弹性继承于父元素的宽度，设置padding和border值是不会改变其宽度的大小的，这里没有用到这个特性
+关于这个特性的详细分析见../05-CSS-第三天{主要内容：盒子模型 }/13嵌套盒子大小.html
+*/
+        .nav a {
+            float: left;
+            line-height: 55px;
+        }
+        .nav li a {
+            padding: 0 35px;
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <div class="w">
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">智能手机</a></li>
+            <li><a href="#">平板电脑</a></li>
+            <li><a href="#">配件</a></li>
+            <li><a href="#">服务与支持</a></li>
+            <li><a href="#">关于上合</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

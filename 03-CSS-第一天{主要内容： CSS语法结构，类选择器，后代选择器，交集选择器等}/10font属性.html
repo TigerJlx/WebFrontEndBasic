@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<!--
+补充:
+text-decoration:none 无装饰，通常对html下划线标签去掉下划线样式
+text-decoration:underline 下划线样式
+text-decoration:line-through 删除线样式-贯穿线样式
+text-decoration:overline 上划线样式
+-->
+        <style type="text/css">
+/*font 专门对于文字的属性
+☞ font-size      文字大小
+☞ font-weight:   设置文字加粗效果
+                normal  文字正常显示
+                400     文字正常显示
+                700    文字加粗
+                bold   文字加粗
+
+☞ font-style:       设置文字是否斜体显示
+               normal  默认正常显示
+               italic    斜体显示
+
+☞ font-family     设置文字字体
+文字字体表示方式：
+◇ 直接设置字体对应的名称 (宋体  黑体)
+◇ 设置字体对应的英文方式
+◇ 设置字体对应的unicode编码（最好使用这种方式，因为不管是英文还是中文没最终都是unicode）
+//console中使用escape("字体")进行unicode查询,把"%u"换成"\"
+注意：
+1. font-family 一次可以设置多个字体，字体与字体中间用逗号隔开。（第一个字体在电脑中不存在，就自动设置第二种字体）
+2. 设置字体要设置常用的字体（常见的字体基本所有电脑都支持）
+//控制面板\外观和个性化\字体中可以查看电脑所支持的字体
+
+☞ line-height:    设置文字行高。
+注意：font是与文字相关的属性，是没有font-color表示文字颜色的，文字的颜色就是用color表示
+*/
+			 p {
+			 	 /* font-weight: 700; */
+			 	   /* font-weight: bold; */
+
+			 	   /* font-weight: 400; */
+
+					
+				   /* 文字正常显示 */
+			 	   /* font-style: normal; */
+					
+				   /* 文字斜体显示 */
+			 	   /* font-style: italic; */
+
+					/* 设置文字字体 */
+			 	   /* font-family: "微软雅黑"; */
+
+			 	   /* font-family: "microsoft yahei"; */
+
+			 	   font-family: "\5FAE\8F6F\96C5\9ED1";
+
+			 }
+        </style>
+    </head>
+    <body>
+
+    	 <p>文字</p>
+    </body>
+</html>
